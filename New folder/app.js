@@ -258,18 +258,9 @@ document.querySelectorAll('a[href]').forEach(a => {
   if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('tel')) {
     a.addEventListener('click', e => {
       e.preventDefault();
-      document.body.style.transition = 'opacity 0.3s';
+      document.body.style.transition = 'opacity 0.12s';
       document.body.style.opacity = '0';
-      setTimeout(() => { window.location.href = href; }, 300);
+      setTimeout(() => { window.location.href = href; }, 120);
     });
   }
-});
-
-// ── PAGE ENTER ─────────────────────────────────────────────────
-document.body.style.opacity = '0';
-window.addEventListener('DOMContentLoaded', () => {
-  requestAnimationFrame(() => {
-    document.body.style.transition = 'opacity 0.5s';
-    document.body.style.opacity = '1';
-  });
 });
