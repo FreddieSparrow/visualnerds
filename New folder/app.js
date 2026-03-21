@@ -179,7 +179,7 @@ if (typer) {
 function animateCounter(el) {
   const target = parseInt(el.dataset.target, 10);
   const suffix = el.dataset.suffix || '';
-  const duration = 2000;
+  const duration = 900;
   const start = performance.now();
 
   (function step(now) {

@@ -41,8 +41,8 @@
 
   --ease: cubic-bezier(0.4,0,0.2,1);
   --ease-bounce: cubic-bezier(0.34,1.56,0.64,1);
-  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
-  --transition-slow: 0.6s cubic-bezier(0.4,0,0.2,1);
+  --transition: 0.15s cubic-bezier(0.4,0,0.2,1);
+  --transition-slow: 0.25s cubic-bezier(0.4,0,0.2,1);
 
   --nav-h: 80px;
   --container: 1200px;
@@ -643,7 +643,7 @@ nav.scrolled {
 .marquee-track {
   display: flex;
   gap: 60px;
-  animation: marquee 25s linear infinite;
+  animation: marquee 14s linear infinite;
   width: max-content;
 }
 
@@ -1413,8 +1413,8 @@ footer {
 ============================== */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+  transform: translateY(10px);
+  transition: opacity 0.18s var(--ease), transform 0.18s var(--ease);
 }
 
 .reveal.in-view {
@@ -1422,11 +1422,11 @@ footer {
   transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 0.06s; }
-.reveal-delay-2 { transition-delay: 0.12s; }
-.reveal-delay-3 { transition-delay: 0.18s; }
-.reveal-delay-4 { transition-delay: 0.24s; }
-.reveal-delay-5 { transition-delay: 0.30s; }
+.reveal-delay-1 { transition-delay: 0.04s; }
+.reveal-delay-2 { transition-delay: 0.08s; }
+.reveal-delay-3 { transition-delay: 0.12s; }
+.reveal-delay-4 { transition-delay: 0.16s; }
+.reveal-delay-5 { transition-delay: 0.20s; }
 
 /* ==============================
    GLITCH
