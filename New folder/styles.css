@@ -153,18 +153,13 @@ nav.scrolled {
 .nav-links a.active::after { width: 100%; }
 
 .nav-cta {
-  padding: 10px 22px;
-  background: var(--grad);
-  border-radius: 50px;
   font-size: 0.875rem;
   font-weight: 600;
-  color: white !important;
-  transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
-  box-shadow: 0 0 20px rgba(124,58,237,0.3);
+  color: var(--text) !important;
 }
 
 .nav-cta::after { display: none !important; }
-.nav-cta:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 30px rgba(124,58,237,0.5); }
+.nav-cta:hover { color: var(--purple-bright) !important; }
 
 /* Hamburger */
 .hamburger {
@@ -295,11 +290,14 @@ nav.scrolled {
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 14px 28px;
   border-radius: 50px;
   font-size: 0.9rem;
   font-weight: 600;
+  white-space: nowrap;
+  line-height: 1.2;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
