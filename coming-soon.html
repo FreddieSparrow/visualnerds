@@ -3,80 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon — VisualNerds</title>
+  <title>Coming Soon — Visual Nerds</title>
   <meta name="description" content="This service is coming soon to VisualNerds. We're working on something new — stay tuned for updates." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%230A0A0B'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='16' font-weight='800' fill='%23FF2D88' text-anchor='middle' dominant-baseline='middle'%3EVN%3C/text%3E%3C/svg%3E" />
-  <style>
-    .coming-soon-hero {
-      min-height: 88vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .coming-soon-icon {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(0,210,255,0.1));
-      border: 1px solid rgba(124,58,237,0.3);
-      border-radius: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 32px;
-      font-size: 2.2rem;
-    }
-    .coming-soon-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(124,58,237,0.12);
-      border: 1px solid rgba(124,58,237,0.25);
-      border-radius: 100px;
-      padding: 6px 16px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--purple-bright);
-      margin-bottom: 24px;
-    }
-    .coming-soon-badge::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--purple-bright);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.85); }
-    }
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      padding: 13px 28px;
-      border-radius: 100px;
-      border: 1px solid rgba(255,255,255,0.12);
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text-2);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .btn-ghost:hover {
-      border-color: rgba(124,58,237,0.4);
-      color: var(--text);
-    }
-  </style>
 </head>
 <body>
 
@@ -92,7 +25,6 @@
     <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
 <div class="mobile-menu">
   <a href="index.html#reel">REEL</a>
   <a href="portfolio.html">WORK</a>
@@ -100,76 +32,36 @@
   <a href="contact.html">CONTACT</a>
 </div>
 
-<section class="coming-soon-hero">
-  <div class="orb orb-1" style="opacity:0.3;top:-100px;"></div>
-  <div class="orb orb-2" style="opacity:0.3;bottom:-80px;"></div>
-  <div class="container" style="position:relative;">
-    <div class="coming-soon-icon">🚀</div>
-    <div class="coming-soon-badge">In Development</div>
-    <h1 class="page-hero-title" style="margin-bottom:20px;">
-      Coming <span class="grad-text">Soon</span>
-    </h1>
-    <p style="font-size:1.05rem;color:var(--text-2);line-height:1.75;max-width:500px;margin:0 auto 40px;">
-      We're working on something new. This service is currently in development and will be launching soon. In the meantime, explore what we already offer.
-    </p>
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;">
-      <a href="services.html" class="btn btn-primary">View Current Services →</a>
-      <a href="contact.html" class="btn-ghost">Get in Touch</a>
-    </div>
-    <p style="font-size:0.8rem;color:var(--text-3);">Want to know when this launches? <a href="mailto:support@visualnerds.com" style="color:var(--purple-bright);font-weight:600;">Drop us an email.</a></p>
-    <p style="font-size:0.72rem;color:var(--text-3);margin-top:6px;">By emailing us you agree to our <a href="terms.html" style="color:var(--text-3);text-decoration:underline;">Terms &amp; Conditions</a>.</p>
+<section class="pg-header">
+  <div class="pg-header__inner">
+    <p class="pg-label"><span class="vn-num">—</span> COMING SOON</p>
+    <h1 class="pg-header__title">IN <span class="vn-pink">DEVELOPMENT.</span></h1>
+    <p class="pg-header__sub">We're working on something new. This service will be launching soon.</p>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="display:inline-flex;">
-          <div class="logo-mark">VN</div>VisualNerds
-        </a>
-        <p>AI-native film studio crafting visual stories at the intersection of technology and human imagination.</p>
-      </div>
-      <div>
-        <div class="footer-col-title">Navigate</div>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Work</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="official-sites.html">Official Sites</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="our-technology.html">Our Technology</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Services</div>
-        <ul class="footer-links">
-          <li><a href="services.html">AI Film Generation</a></li>
-          <li><a href="services.html">Visual Effects</a></li>
-          <li><a href="services.html">Brand Storytelling</a></li>
-          <li><a href="services.html">Post Production</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <ul class="footer-links">
-          <li><a href="mailto:support@visualnerds.com">support@visualnerds.com</a></li>
-          <li><a href="contact.html">Start a Project</a></li>
-          <li><a href="press.html">Press</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms &amp; Conditions</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 VisualNerds.com — All rights reserved. <a href="privacy.html" style="color:var(--text-3);margin-left:16px;">Privacy Policy</a><a href="terms.html" style="color:var(--text-3);margin-left:8px;">Terms</a></span>
-      <div class="social-links">
-        <a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
-      </div>
-    </div>
+<section class="pg-cta">
+  <div class="pg-cta__inner">
+    <h2 class="pg-cta__title">WANT TO KNOW<br><span class="vn-pink">WHEN IT LAUNCHES?</span></h2>
+    <p class="pg-cta__sub">In the meantime, explore what we already offer — or drop us an email to be notified when this goes live.</p>
+    <a href="services.html" class="vn-btn">VIEW SERVICES</a>
+  </div>
+</section>
+
+<footer class="vn-footer">
+  <div class="vn-footer__top">
+    <div class="vn-footer__logo">VISUAL <span class="vn-pink">NERDS</span></div>
+    <p class="vn-footer__tagline">AI-powered film &amp; television.<br>Made by nerds. Watched by everyone.</p>
+  </div>
+  <div class="vn-footer__socials">
+    <a href="#" class="vn-social" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg></a>
+    <a href="#" class="vn-social" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" class="vn-social" aria-label="YouTube" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+    <a href="#" class="vn-social" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+  </div>
+  <div class="vn-footer__bottom">
+    <span>© 2026 VisualNerds.com — All rights reserved.</span>
+    <div class="vn-footer__legal"><a href="press.html">Press</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
   </div>
 </footer>
 

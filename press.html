@@ -17,13 +17,13 @@
       gap: 16px;
     }
     .asset-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
       overflow: hidden;
-      transition: var(--transition);
+      transition: border-color 0.2s;
     }
-    .asset-card:hover { border-color: var(--border-accent); }
+    .asset-card:hover { border-color: rgba(255,45,136,0.4); }
     .asset-preview {
       aspect-ratio: 16/9;
       display: flex;
@@ -33,32 +33,32 @@
     }
     .asset-info {
       padding: 16px 20px;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
     .asset-name {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Mono', monospace;
       font-size: 0.875rem;
       font-weight: 600;
       margin-bottom: 4px;
     }
-    .asset-desc { font-size: 0.8rem; color: var(--text-3); }
+    .asset-desc { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
     .color-swatch {
       display: flex;
       align-items: center;
       gap: 16px;
       padding: 16px 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
     }
     .swatch {
       width: 48px; height: 48px;
-      border-radius: var(--radius-sm);
+      border-radius: 2px;
       flex-shrink: 0;
     }
     .swatch-info { flex: 1; }
-    .swatch-name { font-family: 'Space Grotesk', sans-serif; font-size: 0.875rem; font-weight: 600; }
-    .swatch-hex { font-size: 0.8rem; color: var(--text-3); font-family: monospace; }
+    .swatch-name { font-family: 'Space Mono', monospace; font-size: 0.875rem; font-weight: 600; }
+    .swatch-hex { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-family: monospace; }
     @media (max-width: 600px) {
       .asset-grid { grid-template-columns: 1fr; }
     }
@@ -86,31 +86,26 @@
   <a href="contact.html">CONTACT</a>
 </div>
 
-<!-- PAGE HERO -->
-<section class="page-hero" style="padding-bottom:48px;">
-  <div class="orb orb-1" style="opacity:0.4;"></div>
-  <div class="orb orb-2" style="opacity:0.3;"></div>
-  <div class="container" style="position:relative;">
-    <div class="section-label reveal" style="justify-content:center;">Media</div>
-    <h1 class="page-hero-title reveal reveal-delay-1">
-      Press & <span class="grad-text">Brand Assets</span>
-    </h1>
-    <p class="page-hero-sub reveal reveal-delay-2">For press enquiries, interviews, or brand asset requests, email us at <a href="mailto:support@visualnerds.com" style="color:var(--purple-bright);font-weight:600;">support@visualnerds.com</a>. We respond within 24 hours. <a href="terms.html" style="color:var(--purple-bright);font-size:0.85em;font-weight:600;">Terms apply.</a></p>
+<section class="pg-header">
+  <div class="pg-header__inner">
+    <p class="pg-label"><span class="vn-num">—</span> PRESS &amp; MEDIA</p>
+    <h1 class="pg-header__title">PRESS &amp; <span class="vn-pink">MEDIA.</span></h1>
+    <p class="pg-header__sub">For press enquiries, interviews, or brand asset requests, email us at <a href="mailto:support@visualnerds.com" style="color:var(--pink);font-weight:600;">support@visualnerds.com</a>. We respond within 24 hours. <a href="terms.html" style="color:var(--pink);font-size:0.85em;font-weight:600;">Terms apply.</a></p>
   </div>
 </section>
 
 <!-- BOILERPLATE -->
-<section class="section" style="padding-top:40px;">
-  <div class="container">
-    <div style="max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:48px;">
+<section class="pg-section">
+  <div class="pg-section__inner">
+    <div style="display:flex;flex-direction:column;gap:48px;">
 
       <!-- About / Boilerplate -->
       <div class="reveal">
         <div class="section-label" style="margin-bottom:20px;">About VisualNerds</div>
         <div class="card" style="padding:32px;">
-          <p style="font-size:0.95rem;color:var(--text-2);line-height:1.9;margin-bottom:20px;">VisualNerds is an AI-native film studio based near London, UK. The studio uses artificial intelligence to create cinematic visual content — films, commercials, music videos, and brand stories — for clients worldwide. VisualNerds works at the intersection of machine intelligence and cinematic storytelling, producing visual work that exists beyond the limits of traditional filmmaking.</p>
-          <p style="font-size:0.95rem;color:var(--text-2);line-height:1.9;margin-bottom:20px;">The studio can be found online at <strong style="color:var(--text);">visualnerds.com</strong> and on YouTube at <a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" target="_blank" rel="noopener" style="color:var(--purple-bright);">@visualnerdsuk</a>.</p>
-          <p style="font-size:0.8rem;color:var(--text-3);">You may use this text for editorial purposes. Please do not alter its meaning.</p>
+          <p style="font-size:0.95rem;color:rgba(255,255,255,0.65);line-height:1.9;margin-bottom:20px;">VisualNerds is an AI-native film studio based near London, UK. The studio uses artificial intelligence to create cinematic visual content — films, commercials, music videos, and brand stories — for clients worldwide. VisualNerds works at the intersection of machine intelligence and cinematic storytelling, producing visual work that exists beyond the limits of traditional filmmaking.</p>
+          <p style="font-size:0.95rem;color:rgba(255,255,255,0.65);line-height:1.9;margin-bottom:20px;">The studio can be found online at <strong style="color:#fff;">visualnerds.com</strong> and on YouTube at <a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" target="_blank" rel="noopener" style="color:var(--pink);">@visualnerdsuk</a>.</p>
+          <p style="font-size:0.8rem;color:rgba(255,255,255,0.4);">You may use this text for editorial purposes. Please do not alter its meaning.</p>
         </div>
       </div>
 
@@ -120,10 +115,10 @@
         <div class="asset-grid">
 
           <div class="asset-card">
-            <div class="asset-preview" style="background:var(--surface);">
+            <div class="asset-preview" style="background:rgba(255,255,255,0.04);">
               <div style="display:flex;align-items:center;gap:14px;">
-                <div style="width:52px;height:52px;background:var(--grad);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;color:white;">VN</div>
-                <span style="font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:var(--text);">VisualNerds</span>
+                <div style="width:52px;height:52px;background:var(--grad);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700;color:white;">VN</div>
+                <span style="font-family:'Space Mono',monospace;font-size:1.4rem;font-weight:700;color:#fff;">VisualNerds</span>
               </div>
             </div>
             <div class="asset-info">
@@ -135,8 +130,8 @@
           <div class="asset-card">
             <div class="asset-preview" style="background:#f5f5f7;">
               <div style="display:flex;align-items:center;gap:14px;">
-                <div style="width:52px;height:52px;background:linear-gradient(135deg,#7c3aed,#06b6d4);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;color:white;">VN</div>
-                <span style="font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:#111;">VisualNerds</span>
+                <div style="width:52px;height:52px;background:linear-gradient(135deg,#7c3aed,#06b6d4);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700;color:white;">VN</div>
+                <span style="font-family:'Space Mono',monospace;font-size:1.4rem;font-weight:700;color:#111;">VisualNerds</span>
               </div>
             </div>
             <div class="asset-info">
@@ -147,7 +142,7 @@
 
           <div class="asset-card">
             <div class="asset-preview" style="background:var(--bg-2);">
-              <div style="width:80px;height:80px;background:var(--grad);border-radius:18px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:white;">VN</div>
+              <div style="width:80px;height:80px;background:var(--grad);border-radius:18px;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:2rem;font-weight:700;color:white;">VN</div>
             </div>
             <div class="asset-info">
               <div class="asset-name">Mark Only</div>
@@ -158,8 +153,8 @@
           <div class="asset-card">
             <div class="asset-preview" style="background:var(--grad);">
               <div style="display:flex;align-items:center;gap:14px;">
-                <div style="width:52px;height:52px;background:rgba(255,255,255,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;color:white;border:1px solid rgba(255,255,255,0.2);">VN</div>
-                <span style="font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:white;">VisualNerds</span>
+                <div style="width:52px;height:52px;background:rgba(255,255,255,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700;color:white;border:1px solid rgba(255,255,255,0.2);">VN</div>
+                <span style="font-family:'Space Mono',monospace;font-size:1.4rem;font-weight:700;color:white;">VisualNerds</span>
               </div>
             </div>
             <div class="asset-info">
@@ -169,7 +164,7 @@
           </div>
 
         </div>
-        <p style="font-size:0.8rem;color:var(--text-3);margin-top:12px;line-height:1.6;">To request logo files in SVG, PNG, or other formats, email <a href="mailto:support@visualnerds.com" style="color:var(--purple-bright);">support@visualnerds.com</a>. <a href="terms.html" style="color:var(--purple-bright);font-weight:600;">Terms apply.</a></p>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.4);margin-top:12px;line-height:1.6;">To request logo files in SVG, PNG, or other formats, email <a href="mailto:support@visualnerds.com" style="color:var(--pink);">support@visualnerds.com</a>. <a href="terms.html" style="color:var(--pink);font-weight:600;">Terms apply.</a></p>
       </div>
 
       <!-- Brand Colours -->
@@ -201,7 +196,7 @@
             <span class="tag tag-pink">Accent</span>
           </div>
           <div class="color-swatch">
-            <div class="swatch" style="background:#05050a;border:1px solid var(--border);"></div>
+            <div class="swatch" style="background:#05050a;border:1px solid rgba(255,255,255,0.08);"></div>
             <div class="swatch-info">
               <div class="swatch-name">VN Space</div>
               <div class="swatch-hex">#05050a · Background</div>
@@ -213,38 +208,38 @@
       <!-- Key Facts -->
       <div class="reveal">
         <div class="section-label" style="margin-bottom:20px;">Key Facts</div>
-        <div style="display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
-          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--border);">
-            <div style="padding:16px 20px;background:var(--surface);font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-3);border-right:1px solid var(--border);">Full name</div>
-            <div style="padding:16px 20px;font-size:0.875rem;color:var(--text);">VisualNerds</div>
+        <div style="display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <div style="padding:16px 20px;background:rgba(255,255,255,0.04);font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.4);border-right:1px solid rgba(255,255,255,0.08);">Full name</div>
+            <div style="padding:16px 20px;font-size:0.875rem;color:#fff;">VisualNerds</div>
           </div>
-          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--border);">
-            <div style="padding:16px 20px;background:var(--surface);font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-3);border-right:1px solid var(--border);">Type</div>
-            <div style="padding:16px 20px;font-size:0.875rem;color:var(--text);">AI-native film studio</div>
+          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <div style="padding:16px 20px;background:rgba(255,255,255,0.04);font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.4);border-right:1px solid rgba(255,255,255,0.08);">Type</div>
+            <div style="padding:16px 20px;font-size:0.875rem;color:#fff;">AI-native film studio</div>
           </div>
-          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--border);">
-            <div style="padding:16px 20px;background:var(--surface);font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-3);border-right:1px solid var(--border);">Location</div>
-            <div style="padding:16px 20px;font-size:0.875rem;color:var(--text);">Near London, United Kingdom</div>
+          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <div style="padding:16px 20px;background:rgba(255,255,255,0.04);font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.4);border-right:1px solid rgba(255,255,255,0.08);">Location</div>
+            <div style="padding:16px 20px;font-size:0.875rem;color:#fff;">Near London, United Kingdom</div>
           </div>
-          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--border);">
-            <div style="padding:16px 20px;background:var(--surface);font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-3);border-right:1px solid var(--border);">Founded</div>
-            <div style="padding:16px 20px;font-size:0.875rem;color:var(--text);">2026</div>
+          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <div style="padding:16px 20px;background:rgba(255,255,255,0.04);font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.4);border-right:1px solid rgba(255,255,255,0.08);">Founded</div>
+            <div style="padding:16px 20px;font-size:0.875rem;color:#fff;">2026</div>
           </div>
-          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--border);">
-            <div style="padding:16px 20px;background:var(--surface);font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-3);border-right:1px solid var(--border);">Website</div>
-            <div style="padding:16px 20px;font-size:0.875rem;color:var(--text);">visualnerds.com</div>
+          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <div style="padding:16px 20px;background:rgba(255,255,255,0.04);font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.4);border-right:1px solid rgba(255,255,255,0.08);">Website</div>
+            <div style="padding:16px 20px;font-size:0.875rem;color:#fff;">visualnerds.com</div>
           </div>
-          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--border);">
-            <div style="padding:16px 20px;background:var(--surface);font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-3);border-right:1px solid var(--border);">YouTube</div>
-            <div style="padding:16px 20px;font-size:0.875rem;"><a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" target="_blank" rel="noopener" style="color:var(--purple-bright);">@visualnerdsuk</a></div>
+          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <div style="padding:16px 20px;background:rgba(255,255,255,0.04);font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.4);border-right:1px solid rgba(255,255,255,0.08);">YouTube</div>
+            <div style="padding:16px 20px;font-size:0.875rem;"><a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" target="_blank" rel="noopener" style="color:var(--pink);">@visualnerdsuk</a></div>
           </div>
-          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--border);">
-            <div style="padding:16px 20px;background:var(--surface);font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-3);border-right:1px solid var(--border);">Services</div>
-            <div style="padding:16px 20px;font-size:0.875rem;color:var(--text);">AI film generation, visual effects, brand storytelling, post-production</div>
+          <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <div style="padding:16px 20px;background:rgba(255,255,255,0.04);font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.4);border-right:1px solid rgba(255,255,255,0.08);">Services</div>
+            <div style="padding:16px 20px;font-size:0.875rem;color:#fff;">AI film generation, visual effects, brand storytelling, post-production</div>
           </div>
           <div style="display:grid;grid-template-columns:160px 1fr;">
-            <div style="padding:16px 20px;background:var(--surface);font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-3);border-right:1px solid var(--border);">Press contact</div>
-            <div style="padding:16px 20px;font-size:0.875rem;"><a href="mailto:support@visualnerds.com" style="color:var(--purple-bright);">support@visualnerds.com</a> <span style="font-size:0.78em;color:var(--text-3);">— <a href="terms.html" style="color:var(--purple-bright);font-weight:600;">Terms apply</a></span></div>
+            <div style="padding:16px 20px;background:rgba(255,255,255,0.04);font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.4);border-right:1px solid rgba(255,255,255,0.08);">Press contact</div>
+            <div style="padding:16px 20px;font-size:0.875rem;"><a href="mailto:support@visualnerds.com" style="color:var(--pink);">support@visualnerds.com</a> <span style="font-size:0.78em;color:rgba(255,255,255,0.4);">— <a href="terms.html" style="color:var(--pink);font-weight:600;">Terms apply</a></span></div>
           </div>
         </div>
       </div>
@@ -254,16 +249,16 @@
         <div class="section-label" style="margin-bottom:20px;">Suggested Story Angles</div>
         <div style="display:flex;flex-direction:column;gap:12px;">
           <div class="card" style="padding:24px;">
-            <h4 style="font-family:'Space Grotesk',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:8px;">The end of traditional film production?</h4>
-            <p style="font-size:0.85rem;color:var(--text-2);line-height:1.7;margin:0;">VisualNerds produces full cinematic films with no cameras, no crew, and no sets — using only AI models and a creative pipeline that would have been science fiction five years ago. What does this mean for the film industry?</p>
+            <h4 style="font-family:'Space Mono',monospace;font-size:0.95rem;font-weight:600;margin-bottom:8px;">The end of traditional film production?</h4>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">VisualNerds produces full cinematic films with no cameras, no crew, and no sets — using only AI models and a creative pipeline that would have been science fiction five years ago. What does this mean for the film industry?</p>
           </div>
           <div class="card" style="padding:24px;">
-            <h4 style="font-family:'Space Grotesk',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:8px;">AI filmmaking, made in Britain</h4>
-            <p style="font-size:0.85rem;color:var(--text-2);line-height:1.7;margin:0;">Based near London, VisualNerds is positioning the UK as a home for the next generation of AI-native creative studios — bringing cinematic AI production to a country with a deep heritage in film and visual storytelling.</p>
+            <h4 style="font-family:'Space Mono',monospace;font-size:0.95rem;font-weight:600;margin-bottom:8px;">AI filmmaking, made in Britain</h4>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Based near London, VisualNerds is positioning the UK as a home for the next generation of AI-native creative studios — bringing cinematic AI production to a country with a deep heritage in film and visual storytelling.</p>
           </div>
           <div class="card" style="padding:24px;">
-            <h4 style="font-family:'Space Grotesk',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:8px;">Making the impossible affordable</h4>
-            <p style="font-size:0.85rem;color:var(--text-2);line-height:1.7;margin:0;">Brands and independent filmmakers can now access cinematic visuals that would previously have required Hollywood budgets. AI changes the economics of visual storytelling entirely — and VisualNerds is building that future.</p>
+            <h4 style="font-family:'Space Mono',monospace;font-size:0.95rem;font-weight:600;margin-bottom:8px;">Making the impossible affordable</h4>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Brands and independent filmmakers can now access cinematic visuals that would previously have required Hollywood budgets. AI changes the economics of visual storytelling entirely — and VisualNerds is building that future.</p>
           </div>
         </div>
       </div>
@@ -273,7 +268,7 @@
         <div class="section-label" style="margin-bottom:20px;">Typography</div>
         <div style="display:flex;flex-direction:column;gap:12px;">
           <div class="color-swatch">
-            <div style="width:48px;height:48px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;flex-shrink:0;">Aa</div>
+            <div style="width:48px;height:48px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;font-size:1.1rem;flex-shrink:0;">Aa</div>
             <div class="swatch-info">
               <div class="swatch-name">Space Grotesk</div>
               <div class="swatch-hex">Headings, UI labels, and brand text · Google Fonts</div>
@@ -281,7 +276,7 @@
             <span class="tag tag-purple">Primary</span>
           </div>
           <div class="color-swatch">
-            <div style="width:48px;height:48px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:1rem;flex-shrink:0;">Aa</div>
+            <div style="width:48px;height:48px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:1rem;flex-shrink:0;">Aa</div>
             <div class="swatch-info">
               <div class="swatch-name">DM Sans</div>
               <div class="swatch-hex">Body text and UI copy · Google Fonts</div>
@@ -298,91 +293,91 @@
           <div style="display:flex;flex-direction:column;gap:14px;">
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Refer to us as <strong style="color:var(--text);">VisualNerds</strong> — one word, capital V and N. Not "Visual Nerds", "Visualnerds", or "VN".</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Refer to us as <strong style="color:#fff;">VisualNerds</strong> — one word, capital V and N. Not "Visual Nerds", "Visualnerds", or "VN".</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Describe us as an <strong style="color:var(--text);">AI film studio</strong> or <strong style="color:var(--text);">AI-native film studio</strong>. We are not a software company, an app, or an AI tool.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Describe us as an <strong style="color:#fff;">AI film studio</strong> or <strong style="color:#fff;">AI-native film studio</strong>. We are not a software company, an app, or an AI tool.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">We are <strong style="color:var(--text);">based near London, UK</strong>. Not "London-based" specifically, and not based in the US.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">We are <strong style="color:#fff;">based near London, UK</strong>. Not "London-based" specifically, and not based in the US.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">When referencing our work, use the phrase <strong style="color:var(--text);">"AI-generated"</strong> rather than "computer-generated", "CGI", "rendered", or "deepfake". These terms are inaccurate in our context.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">When referencing our work, use the phrase <strong style="color:#fff;">"AI-generated"</strong> rather than "computer-generated", "CGI", "rendered", or "deepfake". These terms are inaccurate in our context.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">If covering AI in film more broadly, you are welcome to position VisualNerds as a <strong style="color:var(--text);">UK-based example</strong> of the emerging AI production sector. We are happy to provide context or comment — email us first.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">If covering AI in film more broadly, you are welcome to position VisualNerds as a <strong style="color:#fff;">UK-based example</strong> of the emerging AI production sector. We are happy to provide context or comment — email us first.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not publish quotes attributed to VisualNerds without our prior written approval. Contact us for an official statement before going to print or publishing online.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not publish quotes attributed to VisualNerds without our prior written approval. Contact us for an official statement before going to print or publishing online.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not speculate about financials, revenue, funding, team size, or client identities without our explicit confirmation. We do not comment on these matters publicly.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not speculate about financials, revenue, funding, team size, or client identities without our explicit confirmation. We do not comment on these matters publicly.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not describe our work as a threat to human filmmakers, job-destroying, or framed negatively without providing us an opportunity to respond before publication. We are happy to engage on nuanced coverage.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not describe our work as a threat to human filmmakers, job-destroying, or framed negatively without providing us an opportunity to respond before publication. We are happy to engage on nuanced coverage.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not reproduce screenshots, stills, or video from our YouTube channel or website without permission. Contact us to request high-resolution approved assets.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not reproduce screenshots, stills, or video from our YouTube channel or website without permission. Contact us to request high-resolution approved assets.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not imply affiliation, partnership, or endorsement between VisualNerds and any AI model provider (including OpenAI, Runway, Google, etc.) unless we have confirmed this in writing.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not imply affiliation, partnership, or endorsement between VisualNerds and any AI model provider (including OpenAI, Runway, Google, etc.) unless we have confirmed this in writing.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not reproduce, embed, clip, screenshot, or redistribute content from our YouTube channel without our prior written consent — even for editorial illustration. Contact us to request approved video assets or stills.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not reproduce, embed, clip, screenshot, or redistribute content from our YouTube channel without our prior written consent — even for editorial illustration. Contact us to request approved video assets or stills.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not archive, republish, or redistribute content from our online platforms that has since been removed or corrected. Removed content should be treated as no longer authoritative. We are not bound by representations in content that has been taken down in error.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not archive, republish, or redistribute content from our online platforms that has since been removed or corrected. Removed content should be treated as no longer authoritative. We are not bound by representations in content that has been taken down in error.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not treat content published on our platforms that is later corrected or removed as an admission, representation, or permanent record of our position. Accidental publications do not constitute formal statements.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not treat content published on our platforms that is later corrected or removed as an admission, representation, or permanent record of our position. Accidental publications do not constitute formal statements.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not publish or broadcast speculative claims about our clients, projects in development, or unreleased work. We consider this a breach of our reasonable expectation of confidentiality and will respond accordingly.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not publish or broadcast speculative claims about our clients, projects in development, or unreleased work. We consider this a breach of our reasonable expectation of confidentiality and will respond accordingly.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not publish content that is defamatory, maliciously misleading, or intended to cause commercial harm to VisualNerds. We will pursue all available legal remedies under UK defamation law where such content causes or risks causing us serious harm.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not publish content that is defamatory, maliciously misleading, or intended to cause commercial harm to VisualNerds. We will pursue all available legal remedies under UK defamation law where such content causes or risks causing us serious harm.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not conduct or publish an interview with any person claiming to represent or speak on behalf of VisualNerds unless that person has provided written confirmation of their authority to do so. We cannot be held responsible for unauthorised statements made by third parties claiming association with us.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not conduct or publish an interview with any person claiming to represent or speak on behalf of VisualNerds unless that person has provided written confirmation of their authority to do so. We cannot be held responsible for unauthorised statements made by third parties claiming association with us.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not use our name, brand, logo, or content in AI-generated articles, summaries, or automated press coverage without our knowledge and approval. We actively monitor for AI-generated media coverage and reserve the right to issue corrections and legal notices in response to inaccurate automated content.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not use our name, brand, logo, or content in AI-generated articles, summaries, or automated press coverage without our knowledge and approval. We actively monitor for AI-generated media coverage and reserve the right to issue corrections and legal notices in response to inaccurate automated content.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not describe VisualNerds as "controversial", "unethical", or similar editorial characterisations without providing us a full and fair right of reply with a minimum of 48 hours' notice before publication. Any such characterisation published without our response opportunity will be treated as a potential defamation matter.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not describe VisualNerds as "controversial", "unethical", or similar editorial characterisations without providing us a full and fair right of reply with a minimum of 48 hours' notice before publication. Any such characterisation published without our response opportunity will be treated as a potential defamation matter.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not reuse quotes, statements, or comments provided to one outlet in a different publication or context without our written consent. Quotes are given specifically for the article and outlet described at the time of provision.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not reuse quotes, statements, or comments provided to one outlet in a different publication or context without our written consent. Quotes are given specifically for the article and outlet described at the time of provision.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not share, repost, or republish any content from our YouTube channel, website, or social media on third-party platforms — including link aggregators, AI training datasets, content archives, or press summary services — without prior written permission.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not share, repost, or republish any content from our YouTube channel, website, or social media on third-party platforms — including link aggregators, AI training datasets, content archives, or press summary services — without prior written permission.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">If you are unsure whether a piece of information is on-record, verified, or approved for publication, ask us first. We would always rather clarify before publication than issue a correction after. Contact <a href="mailto:support@visualnerds.com" style="color:var(--purple-bright);">support@visualnerds.com</a>. <a href="terms.html" style="color:var(--purple-bright);font-size:0.85em;font-weight:600;">Terms apply.</a></p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">If you are unsure whether a piece of information is on-record, verified, or approved for publication, ask us first. We would always rather clarify before publication than issue a correction after. Contact <a href="mailto:support@visualnerds.com" style="color:var(--pink);">support@visualnerds.com</a>. <a href="terms.html" style="color:var(--pink);font-size:0.85em;font-weight:600;">Terms apply.</a></p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">When covering AI film production broadly, we encourage accurate industry framing. We are happy to be a resource for factual background on how AI film production works — just email us and we will respond promptly.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">When covering AI film production broadly, we encourage accurate industry framing. We are happy to be a resource for factual background on how AI film production works — just email us and we will respond promptly.</p>
             </div>
           </div>
         </div>
@@ -392,10 +387,10 @@
       <div class="reveal">
         <div class="section-label" style="margin-bottom:20px;">Corrections Policy</div>
         <div class="card" style="padding:28px;">
-          <p style="font-size:0.875rem;color:var(--text-2);line-height:1.75;margin-bottom:12px;">If you have published factually incorrect information about VisualNerds, we ask that you issue a correction promptly and with appropriate prominence — ideally in the same location and format as the original error. An appended correction note at the foot of an article is not sufficient where the error appeared in a headline or opening paragraph.</p>
-          <p style="font-size:0.875rem;color:var(--text-2);line-height:1.75;margin-bottom:12px;">We will provide written evidence of any factual inaccuracies upon request and will work constructively with editorial teams to agree accurate language. We reserve the right to publish our own correction statement if a publication fails to act within a reasonable time.</p>
-          <p style="font-size:0.875rem;color:var(--text-2);line-height:1.75;margin-bottom:12px;">We take reputational accuracy seriously. Persistent or damaging misrepresentation — including content that has been corrected but remains indexed and widely shared — may result in a formal complaint to IPSO (Independent Press Standards Organisation), Ofcom, or other relevant press regulator, and legal action under the Defamation Act 2013 or other applicable law of England and Wales.</p>
-          <p style="font-size:0.875rem;color:var(--text-2);line-height:1.75;margin:0;">To request a correction or clarification, email <a href="mailto:support@visualnerds.com" style="color:var(--purple-bright);">support@visualnerds.com</a> with the publication name, URL, and specific inaccuracy. We will respond within 7 days. <a href="terms.html" style="color:var(--purple-bright);font-size:0.85em;font-weight:600;">Terms apply.</a></p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:12px;">If you have published factually incorrect information about VisualNerds, we ask that you issue a correction promptly and with appropriate prominence — ideally in the same location and format as the original error. An appended correction note at the foot of an article is not sufficient where the error appeared in a headline or opening paragraph.</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:12px;">We will provide written evidence of any factual inaccuracies upon request and will work constructively with editorial teams to agree accurate language. We reserve the right to publish our own correction statement if a publication fails to act within a reasonable time.</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:12px;">We take reputational accuracy seriously. Persistent or damaging misrepresentation — including content that has been corrected but remains indexed and widely shared — may result in a formal complaint to IPSO (Independent Press Standards Organisation), Ofcom, or other relevant press regulator, and legal action under the Defamation Act 2013 or other applicable law of England and Wales.</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.75;margin:0;">To request a correction or clarification, email <a href="mailto:support@visualnerds.com" style="color:var(--pink);">support@visualnerds.com</a> with the publication name, URL, and specific inaccuracy. We will respond within 7 days. <a href="terms.html" style="color:var(--pink);font-size:0.85em;font-weight:600;">Terms apply.</a></p>
         </div>
       </div>
 
@@ -403,44 +398,44 @@
       <div class="reveal">
         <div class="section-label" style="margin-bottom:20px;">YouTube &amp; Online Content Policy</div>
         <div class="card" style="padding:28px;">
-          <p style="font-size:0.875rem;color:var(--text-2);line-height:1.75;margin-bottom:8px;">All content published on our YouTube channel and website is copyright VisualNerds. The following policy governs how press and third parties may reference, use, or respond to our online content. These rules apply whether or not an individual piece of content remains live at the time of your publication.</p>
-          <p style="font-size:0.875rem;color:var(--text-2);line-height:1.75;margin-bottom:16px;"><strong style="color:var(--text);">Accidental or erroneous publication:</strong> From time to time, content may be published on our platforms prematurely, in error, or inconsistent with our intended communications. Such accidental publications do not constitute formal statements, admissions, announcements, or contractual commitments on our part. The following rules apply in all such cases:</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:8px;">All content published on our YouTube channel and website is copyright VisualNerds. The following policy governs how press and third parties may reference, use, or respond to our online content. These rules apply whether or not an individual piece of content remains live at the time of your publication.</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:16px;"><strong style="color:#fff;">Accidental or erroneous publication:</strong> From time to time, content may be published on our platforms prematurely, in error, or inconsistent with our intended communications. Such accidental publications do not constitute formal statements, admissions, announcements, or contractual commitments on our part. The following rules apply in all such cases:</p>
           <div style="display:flex;flex-direction:column;gap:14px;">
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#facc15;font-weight:700;flex-shrink:0;margin-top:2px;">!</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">Verify before publishing.</strong> Content on our YouTube channel and website reflects our position at the time of upload, but may be updated, corrected, or removed at any time. You must verify any factual claim with us directly at <a href="mailto:support@visualnerds.com" style="color:var(--purple-bright);">support@visualnerds.com</a> before publishing any article or broadcast that relies on it.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">Verify before publishing.</strong> Content on our YouTube channel and website reflects our position at the time of upload, but may be updated, corrected, or removed at any time. You must verify any factual claim with us directly at <a href="mailto:support@visualnerds.com" style="color:var(--pink);">support@visualnerds.com</a> before publishing any article or broadcast that relies on it.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#facc15;font-weight:700;flex-shrink:0;margin-top:2px;">!</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">Notify us of suspected error publications.</strong> If you observe content on our platforms that appears incomplete, inconsistent with our established communications, or published ahead of any announcement — please notify <a href="mailto:support@visualnerds.com" style="color:var(--purple-bright);">support@visualnerds.com</a> immediately. Do not publish, report on, or distribute that content until we have confirmed its status in writing.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">Notify us of suspected error publications.</strong> If you observe content on our platforms that appears incomplete, inconsistent with our established communications, or published ahead of any announcement — please notify <a href="mailto:support@visualnerds.com" style="color:var(--pink);">support@visualnerds.com</a> immediately. Do not publish, report on, or distribute that content until we have confirmed its status in writing.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">Do not archive or redistribute removed content.</strong> Content that has been deleted, made private, or corrected on our platforms must not be archived, screenshotted, reuploaded, redistributed, or cited as an authoritative record. We actively monitor for redistribution of removed content and will issue takedown requests and legal notices where appropriate.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">Do not archive or redistribute removed content.</strong> Content that has been deleted, made private, or corrected on our platforms must not be archived, screenshotted, reuploaded, redistributed, or cited as an authoritative record. We actively monitor for redistribution of removed content and will issue takedown requests and legal notices where appropriate.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">Do not treat error content as binding.</strong> Content that is removed or subsequently corrected is not to be cited as a formal statement, admission, representation, product announcement, or legal commitment. We are not bound by, and expressly disclaim, any representations made in content published in error.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">Do not treat error content as binding.</strong> Content that is removed or subsequently corrected is not to be cited as a formal statement, admission, representation, product announcement, or legal commitment. We are not bound by, and expressly disclaim, any representations made in content published in error.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">Do not clip, embed, or reuse our video content.</strong> You may not clip, embed, download, repost, screen-record, or otherwise reproduce content from our YouTube channel in any third-party publication, platform, social media account, or commercial context without our prior written consent. This includes editorial illustrations, thumbnails, review content, and reaction videos.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">Do not clip, embed, or reuse our video content.</strong> You may not clip, embed, download, repost, screen-record, or otherwise reproduce content from our YouTube channel in any third-party publication, platform, social media account, or commercial context without our prior written consent. This includes editorial illustrations, thumbnails, review content, and reaction videos.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">Do not submit our content to AI training datasets.</strong> You may not submit, upload, or include any content from our YouTube channel, website, or press materials into any AI training dataset, model fine-tuning corpus, or synthetic data collection — for any purpose — without our explicit written consent.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">Do not submit our content to AI training datasets.</strong> You may not submit, upload, or include any content from our YouTube channel, website, or press materials into any AI training dataset, model fine-tuning corpus, or synthetic data collection — for any purpose — without our explicit written consent.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">Do not use our content to generate AI summaries without consent.</strong> You may not use our YouTube videos, scripts, descriptions, or website content as source material for AI-generated articles, summaries, or automated news items — whether published under your name or any other. Such use without consent constitutes copyright infringement and misuse of our intellectual property.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">Do not use our content to generate AI summaries without consent.</strong> You may not use our YouTube videos, scripts, descriptions, or website content as source material for AI-generated articles, summaries, or automated news items — whether published under your name or any other. Such use without consent constitutes copyright infringement and misuse of our intellectual property.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">Issue corrections promptly if you published based on error content.</strong> If you discover that you have published content based on something we later removed or corrected, please issue a correction immediately and notify us. We will work with you to agree accurate replacement language and will not pursue further action where a prompt and proportionate correction is made.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">Issue corrections promptly if you published based on error content.</strong> If you discover that you have published content based on something we later removed or corrected, please issue a correction immediately and notify us. We will work with you to agree accurate replacement language and will not pursue further action where a prompt and proportionate correction is made.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">Request approved assets.</strong> To lawfully use images, stills, or video clips from our platforms, contact <a href="mailto:support@visualnerds.com" style="color:var(--purple-bright);">support@visualnerds.com</a> to request approved editorial assets. <a href="terms.html" style="color:var(--purple-bright);font-size:0.85em;font-weight:600;">Terms apply.</a> We will typically respond within 24 hours.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">Request approved assets.</strong> To lawfully use images, stills, or video clips from our platforms, contact <a href="mailto:support@visualnerds.com" style="color:var(--pink);">support@visualnerds.com</a> to request approved editorial assets. <a href="terms.html" style="color:var(--pink);font-size:0.85em;font-weight:600;">Terms apply.</a> We will typically respond within 24 hours.</p>
             </div>
           </div>
         </div>
@@ -450,10 +445,10 @@
       <div class="reveal">
         <div class="section-label" style="margin-bottom:20px;">Embargoes &amp; Exclusivity</div>
         <div class="card" style="padding:28px;">
-          <p style="font-size:0.875rem;color:var(--text-2);line-height:1.75;margin-bottom:12px;">Where we share information under embargo, the embargo date and terms will be stated explicitly in writing. We expect all recipients to honour embargo agreements in full. Publication ahead of an embargo date — for any reason, including technical error or competitive pressure — constitutes a breach of our agreement.</p>
-          <p style="font-size:0.875rem;color:var(--text-2);line-height:1.75;margin-bottom:12px;">Breach of an embargo will result in: (a) that publication being removed from our press list; (b) revocation of any exclusivity or advance access previously granted; and (c) potential legal action if material commercial loss is suffered as a result of the breach.</p>
-          <p style="font-size:0.875rem;color:var(--text-2);line-height:1.75;margin-bottom:12px;">Where exclusivity is agreed in writing, we will honour it for the agreed period. Exclusivity applies only to the specific story, angle, or materials as defined in writing — it does not prevent us from making general public announcements on related topics.</p>
-          <p style="font-size:0.875rem;color:var(--text-2);line-height:1.75;margin:0;">We do not offer paid editorial coverage or sponsored press coverage. Any publication that misrepresents press materials as independent editorial will be formally reported to IPSO, Ofcom, or the relevant regulatory body.</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:12px;">Where we share information under embargo, the embargo date and terms will be stated explicitly in writing. We expect all recipients to honour embargo agreements in full. Publication ahead of an embargo date — for any reason, including technical error or competitive pressure — constitutes a breach of our agreement.</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:12px;">Breach of an embargo will result in: (a) that publication being removed from our press list; (b) revocation of any exclusivity or advance access previously granted; and (c) potential legal action if material commercial loss is suffered as a result of the breach.</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:12px;">Where exclusivity is agreed in writing, we will honour it for the agreed period. Exclusivity applies only to the specific story, angle, or materials as defined in writing — it does not prevent us from making general public announcements on related topics.</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.75;margin:0;">We do not offer paid editorial coverage or sponsored press coverage. Any publication that misrepresents press materials as independent editorial will be formally reported to IPSO, Ofcom, or the relevant regulatory body.</p>
         </div>
       </div>
 
@@ -461,27 +456,27 @@
       <div class="reveal">
         <div class="section-label" style="margin-bottom:20px;">Interview &amp; Comment Policy</div>
         <div class="card" style="padding:28px;">
-          <p style="font-size:0.875rem;color:var(--text-2);line-height:1.75;margin-bottom:16px;">We are happy to engage with the press. The following conditions apply to all media interactions:</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:16px;">We are happy to engage with the press. The following conditions apply to all media interactions:</p>
           <div style="display:flex;flex-direction:column;gap:14px;">
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">All interview requests should be submitted in writing to <a href="mailto:support@visualnerds.com" style="color:var(--purple-bright);">support@visualnerds.com</a> (<a href="terms.html" style="color:var(--purple-bright);font-size:0.85em;font-weight:600;">Terms apply</a>) with the outlet name, topic, deadline, and intended format (written, podcast, video). We will respond within 24 hours.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">All interview requests should be submitted in writing to <a href="mailto:support@visualnerds.com" style="color:var(--pink);">support@visualnerds.com</a> (<a href="terms.html" style="color:var(--pink);font-size:0.85em;font-weight:600;">Terms apply</a>) with the outlet name, topic, deadline, and intended format (written, podcast, video). We will respond within 24 hours.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">We reserve the right to review and approve direct quotes before publication. Please allow 24 hours for quote review on time-sensitive articles; longer for complex topics.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">We reserve the right to review and approve direct quotes before publication. Please allow 24 hours for quote review on time-sensitive articles; longer for complex topics.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Where we provide comment on record, that comment is provided for use in the specific article and context described. Reuse in different contexts or publications requires our separate written consent.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Where we provide comment on record, that comment is provided for use in the specific article and context described. Reuse in different contexts or publications requires our separate written consent.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not record phone calls or in-person conversations with VisualNerds representatives without our prior written consent. Recording without consent may be unlawful under UK law and will be treated as a serious breach of trust.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not record phone calls or in-person conversations with VisualNerds representatives without our prior written consent. Recording without consent may be unlawful under UK law and will be treated as a serious breach of trust.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not attribute quotes or statements to VisualNerds based on paraphrase, inference, or second-hand reports. Only publish direct quotes that we have approved in writing.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not attribute quotes or statements to VisualNerds based on paraphrase, inference, or second-hand reports. Only publish direct quotes that we have approved in writing.</p>
             </div>
           </div>
         </div>
@@ -491,27 +486,27 @@
       <div class="reveal">
         <div class="section-label" style="margin-bottom:20px;">Right of Reply &amp; Legal Notices</div>
         <div class="card" style="padding:28px;">
-          <p style="font-size:0.875rem;color:var(--text-2);line-height:1.75;margin-bottom:16px;">VisualNerds takes a proactive approach to protecting its reputation and legal rights. The following applies to any editorial, journalistic, or media coverage of VisualNerds:</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:16px;">VisualNerds takes a proactive approach to protecting its reputation and legal rights. The following applies to any editorial, journalistic, or media coverage of VisualNerds:</p>
           <div style="display:flex;flex-direction:column;gap:14px;">
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">Right of reply.</strong> Before publishing any critical, negative, or potentially damaging coverage of VisualNerds, you must provide us with a full and fair opportunity to respond — with a minimum of 7 days' notice for standard articles, and 14 days for investigations. Our response must be included in any published piece in a fair and proportionate manner.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">Right of reply.</strong> Before publishing any critical, negative, or potentially damaging coverage of VisualNerds, you must provide us with a full and fair opportunity to respond — with a minimum of 7 days' notice for standard articles, and 14 days for investigations. Our response must be included in any published piece in a fair and proportionate manner.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">Defamation notice.</strong> VisualNerds will enforce its rights under the Defamation Act 2013, the Malicious Communications Act 1988, and any other applicable law against publications that make false statements of fact that cause, or are likely to cause, serious harm to our reputation. We monitor for defamatory content online and will act promptly where we identify it.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">Defamation notice.</strong> VisualNerds will enforce its rights under the Defamation Act 2013, the Malicious Communications Act 1988, and any other applicable law against publications that make false statements of fact that cause, or are likely to cause, serious harm to our reputation. We monitor for defamatory content online and will act promptly where we identify it.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">Copyright enforcement.</strong> Unauthorised use of our content — including video, imagery, written text, and brand assets — will be addressed with DMCA takedown notices, copyright complaints to relevant platforms, and legal proceedings where necessary.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">Copyright enforcement.</strong> Unauthorised use of our content — including video, imagery, written text, and brand assets — will be addressed with DMCA takedown notices, copyright complaints to relevant platforms, and legal proceedings where necessary.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">Regulator complaints.</strong> Where a publication has breached editorial standards — including accuracy requirements, right of reply obligations, or embargo terms — we will file formal complaints with IPSO, Ofcom, or the relevant press regulator, and will make such complaints publicly known where appropriate.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">Regulator complaints.</strong> Where a publication has breached editorial standards — including accuracy requirements, right of reply obligations, or embargo terms — we will file formal complaints with IPSO, Ofcom, or the relevant press regulator, and will make such complaints publicly known where appropriate.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#facc15;font-weight:700;flex-shrink:0;margin-top:2px;">!</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;"><strong style="color:var(--text);">To serve legal notices</strong> or file formal editorial complaints, address correspondence in writing to <a href="mailto:support@visualnerds.com" style="color:var(--purple-bright);">support@visualnerds.com</a> marked for the attention of Legal. <a href="terms.html" style="color:var(--purple-bright);font-size:0.85em;font-weight:600;">Terms apply.</a> We will acknowledge all formal legal correspondence within 5 business days.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;"><strong style="color:#fff;">To serve legal notices</strong> or file formal editorial complaints, address correspondence in writing to <a href="mailto:support@visualnerds.com" style="color:var(--pink);">support@visualnerds.com</a> marked for the attention of Legal. <a href="terms.html" style="color:var(--pink);font-size:0.85em;font-weight:600;">Terms apply.</a> We will acknowledge all formal legal correspondence within 5 business days.</p>
             </div>
           </div>
         </div>
@@ -521,23 +516,23 @@
       <div class="reveal">
         <div class="section-label" style="margin-bottom:20px;">Social Media &amp; Sharing Policy</div>
         <div class="card" style="padding:28px;">
-          <p style="font-size:0.875rem;color:var(--text-2);line-height:1.75;margin-bottom:16px;">The following rules apply to the sharing of VisualNerds content on social media platforms, link aggregators, and online communities:</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:16px;">The following rules apply to the sharing of VisualNerds content on social media platforms, link aggregators, and online communities:</p>
           <div style="display:flex;flex-direction:column;gap:14px;">
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">You may share links to our public website pages and YouTube videos on social media, provided the context is accurate and not misleading.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">You may share links to our public website pages and YouTube videos on social media, provided the context is accurate and not misleading.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not download, repost, or re-upload our video content to any platform without written permission. This includes TikTok, Instagram Reels, X (Twitter), Facebook, Reddit, or any other platform regardless of whether attribution is given.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not download, repost, or re-upload our video content to any platform without written permission. This includes TikTok, Instagram Reels, X (Twitter), Facebook, Reddit, or any other platform regardless of whether attribution is given.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not impersonate VisualNerds on any social media platform or create accounts that could be confused with an official VisualNerds account. Our only confirmed presence is visualnerds.com and our official YouTube channel.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not impersonate VisualNerds on any social media platform or create accounts that could be confused with an official VisualNerds account. Our only confirmed presence is visualnerds.com and our official YouTube channel.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not share content from our platforms alongside commentary that misrepresents its meaning, origin, or context. If you are sharing our content with editorial comment, the distinction between our original content and your commentary must be clearly made.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not share content from our platforms alongside commentary that misrepresents its meaning, origin, or context. If you are sharing our content with editorial comment, the distinction between our original content and your commentary must be clearly made.</p>
             </div>
           </div>
         </div>
@@ -550,98 +545,62 @@
           <div style="display:flex;flex-direction:column;gap:16px;">
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Use the logo assets available on this page or request high-resolution files from <a href="mailto:support@visualnerds.com" style="color:var(--purple-bright);">support@visualnerds.com</a>. <a href="terms.html" style="color:var(--purple-bright);font-size:0.85em;font-weight:600;">Terms apply.</a></p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Use the logo assets available on this page or request high-resolution files from <a href="mailto:support@visualnerds.com" style="color:var(--pink);">support@visualnerds.com</a>. <a href="terms.html" style="color:var(--pink);font-size:0.85em;font-weight:600;">Terms apply.</a></p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Maintain adequate clear space around the logo — a minimum of the height of the "VN" mark on all sides.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Maintain adequate clear space around the logo — a minimum of the height of the "VN" mark on all sides.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#34d399;font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Use the dark wordmark on light backgrounds and the light wordmark on dark or coloured backgrounds.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Use the dark wordmark on light backgrounds and the light wordmark on dark or coloured backgrounds.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not alter the logo colours, proportions, typeface, or add drop shadows, outlines, or other effects.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not alter the logo colours, proportions, typeface, or add drop shadows, outlines, or other effects.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not place the logo on a background that reduces legibility or clashes with the brand colours.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not place the logo on a background that reduces legibility or clashes with the brand colours.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not use our logo in a way that implies partnership, sponsorship, or endorsement without our written approval.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not use our logo in a way that implies partnership, sponsorship, or endorsement without our written approval.</p>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start;">
               <span style="color:#f87171;font-weight:700;flex-shrink:0;margin-top:2px;">✗</span>
-              <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;margin:0;">Do not animate, distort, rotate, or apply motion effects to the logo without explicit written permission.</p>
+              <p style="font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0;">Do not animate, distort, rotate, or apply motion effects to the logo without explicit written permission.</p>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Press contact -->
-      <div class="card reveal" style="text-align:center;padding:40px;">
-        <div style="font-size:2rem;margin-bottom:16px;">📰</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;margin-bottom:10px;">Press Enquiries</h3>
-        <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;max-width:480px;margin:0 auto 24px;">For interviews, quotes, editorial requests, or higher-resolution brand assets, email us directly. We aim to respond to all press enquiries within 24 hours.</p>
-        <a href="mailto:support@visualnerds.com" class="btn btn-primary">support@visualnerds.com</a>
-        <p style="font-size:0.75rem;color:var(--text-3);margin-top:10px;">By emailing us you agree to our <a href="terms.html" style="color:var(--text-3);text-decoration:underline;">Terms &amp; Conditions</a>.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="display:inline-flex;">
-          <div class="logo-mark">VN</div>VisualNerds
-        </a>
-        <p>AI-native film studio crafting visual stories at the intersection of technology and human imagination. Based near London, UK.</p>
-      </div>
-      <div>
-        <div class="footer-col-title">Navigate</div>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Work</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="official-sites.html">Official Sites</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="our-technology.html">Our Technology</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Services</div>
-        <ul class="footer-links">
-          <li><a href="services.html">AI Film Generation</a></li>
-          <li><a href="services.html">Visual Effects</a></li>
-          <li><a href="services.html">Brand Storytelling</a></li>
-          <li><a href="services.html">Post Production</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <ul class="footer-links">
-          <li><a href="mailto:support@visualnerds.com">support@visualnerds.com</a></li>
-          <li><a href="contact.html">Start a Project</a></li>
-          <li><a href="press.html">Press</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms &amp; Conditions</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 VisualNerds.com — All rights reserved. <a href="privacy.html" style="color:var(--text-3);margin-left:16px;">Privacy Policy</a><a href="terms.html" style="color:var(--text-3);margin-left:8px;">Terms</a></span>
-      <div class="social-links">
-        <a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
-      </div>
-    </div>
+<section class="pg-cta">
+  <div class="pg-cta__inner">
+    <h2 class="pg-cta__title">PRESS<br><span class="vn-pink">ENQUIRIES.</span></h2>
+    <p class="pg-cta__sub">For interviews, quotes, editorial requests, or higher-resolution brand assets, email us directly. We aim to respond to all press enquiries within 24 hours.</p>
+    <a href="mailto:support@visualnerds.com" class="vn-btn">SUPPORT@VISUALNERDS.COM</a>
+  </div>
+</section>
+
+<footer class="vn-footer">
+  <div class="vn-footer__top">
+    <div class="vn-footer__logo">VISUAL <span class="vn-pink">NERDS</span></div>
+    <p class="vn-footer__tagline">AI-powered film &amp; television.<br>Made by nerds. Watched by everyone.</p>
+  </div>
+  <div class="vn-footer__socials">
+    <a href="#" class="vn-social" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg></a>
+    <a href="#" class="vn-social" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" class="vn-social" aria-label="YouTube" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+    <a href="#" class="vn-social" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+  </div>
+  <div class="vn-footer__bottom">
+    <span>© 2026 VisualNerds.com — All rights reserved.</span>
+    <div class="vn-footer__legal"><a href="press.html">Press</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
   </div>
 </footer>
 

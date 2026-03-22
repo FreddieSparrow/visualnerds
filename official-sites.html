@@ -12,23 +12,23 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%230A0A0B'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='16' font-weight='800' fill='%23FF2D88' text-anchor='middle' dominant-baseline='middle'%3EVN%3C/text%3E%3C/svg%3E" />
   <style>
     .domain-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
       padding: 36px 40px;
       display: flex;
       align-items: center;
       gap: 28px;
-      transition: var(--transition);
+      transition: border-color 0.2s;
     }
     .domain-card:hover {
-      border-color: var(--border-accent);
+      border-color: rgba(255,45,136,0.4);
       transform: translateY(-3px);
       box-shadow: var(--shadow-card), var(--shadow-purple);
     }
     .domain-icon {
       width: 64px; height: 64px;
-      border-radius: var(--radius);
+      border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -36,7 +36,7 @@
       flex-shrink: 0;
     }
     .domain-name {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Mono', monospace;
       font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: -0.5px;
@@ -44,7 +44,7 @@
     }
     .domain-desc {
       font-size: 0.875rem;
-      color: var(--text-2);
+      color: rgba(255,255,255,0.65);
       line-height: 1.6;
     }
     .domain-badge {
@@ -54,7 +54,7 @@
     .warn-box {
       background: rgba(239,68,68,0.06);
       border: 1px solid rgba(239,68,68,0.2);
-      border-radius: var(--radius);
+      border-radius: 4px;
       padding: 24px 28px;
       display: flex;
       gap: 16px;
@@ -66,7 +66,7 @@
       margin-top: 2px;
     }
     .warn-title {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Mono', monospace;
       font-size: 1rem;
       font-weight: 600;
       color: #f87171;
@@ -74,20 +74,20 @@
     }
     .warn-text {
       font-size: 0.875rem;
-      color: var(--text-2);
+      color: rgba(255,255,255,0.65);
       line-height: 1.75;
     }
     .ok-box {
       background: rgba(16,185,129,0.06);
       border: 1px solid rgba(16,185,129,0.2);
-      border-radius: var(--radius);
+      border-radius: 4px;
       padding: 24px 28px;
       display: flex;
       gap: 16px;
       align-items: flex-start;
     }
     .ok-title {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Mono', monospace;
       font-size: 1rem;
       font-weight: 600;
       color: #34d399;
@@ -98,9 +98,9 @@
       align-items: center;
       gap: 12px;
       padding: 14px 18px;
-      border-radius: var(--radius-sm);
-      background: var(--surface);
-      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
       font-size: 0.875rem;
     }
     .check-icon {
@@ -115,8 +115,8 @@
     }
     .check-yes { background: rgba(16,185,129,0.15); color: #34d399; }
     .check-no { background: rgba(239,68,68,0.15); color: #f87171; }
-    .check-label { color: var(--text); font-family: 'Space Grotesk', sans-serif; font-weight: 500; }
-    .check-sub { color: var(--text-3); font-size: 0.8rem; margin-left: auto; }
+    .check-label { color: #fff; font-family: 'Space Mono', monospace; font-weight: 500; }
+    .check-sub { color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-left: auto; }
   </style>
 </head>
 <body>
@@ -141,23 +141,18 @@
   <a href="contact.html">CONTACT</a>
 </div>
 
-<!-- PAGE HERO -->
-<section class="page-hero" style="padding-bottom:48px;">
-  <div class="orb orb-1" style="opacity:0.4;"></div>
-  <div class="orb orb-2" style="opacity:0.3;"></div>
-  <div class="container" style="position:relative;">
-    <div class="section-label reveal" style="justify-content:center;">Verified Presence</div>
-    <h1 class="page-hero-title reveal reveal-delay-1">
-      Our Official <span class="grad-text">Sites & Emails</span>
-    </h1>
-    <p class="page-hero-sub reveal reveal-delay-2">This page tells you exactly where to find us online and how to verify that any communication you receive is genuinely from VisualNerds.</p>
+<section class="pg-header">
+  <div class="pg-header__inner">
+    <p class="pg-label"><span class="vn-num">—</span> OFFICIAL SITES</p>
+    <h1 class="pg-header__title">OUR OFFICIAL <span class="vn-pink">SITES &amp; EMAILS.</span></h1>
+    <p class="pg-header__sub">Exactly where to find us online and how to verify any communication from VisualNerds.</p>
   </div>
 </section>
 
 <!-- OFFICIAL DOMAINS -->
-<section class="section" style="padding-top:40px;">
-  <div class="container">
-    <div style="max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:40px;">
+<section class="pg-section">
+  <div class="pg-section__inner">
+    <div style="display:flex;flex-direction:column;gap:40px;">
 
       <!-- Domains -->
       <div class="reveal">
@@ -179,7 +174,7 @@
             <div class="domain-icon" style="background:var(--cyan-pale);border:1px solid rgba(6,182,212,0.2);">🇬🇧</div>
             <div style="flex:1;">
               <div class="domain-name">visualnerds.co.uk</div>
-              <div class="domain-desc">Our official UK domain, registered for our British audience. It automatically redirects to <strong style="color:var(--text);">visualnerds.com</strong> — so you'll always land on the same site.</div>
+              <div class="domain-desc">Our official UK domain, registered for our British audience. It automatically redirects to <strong style="color:#fff;">visualnerds.com</strong> — so you'll always land on the same site.</div>
             </div>
             <div class="domain-badge">
               <span class="tag tag-cyan">Redirects → .com</span>
@@ -196,7 +191,7 @@
           <div style="font-size:1.5rem;flex-shrink:0;margin-top:2px;">✅</div>
           <div>
             <div class="ok-title">We only send email from @visualnerds.com</div>
-            <p class="warn-text">Every email sent by VisualNerds — including project quotes, invoices, updates, and support replies — comes exclusively from an <strong style="color:var(--text);">@visualnerds.com</strong> address. We never send from .co.uk, .net, Gmail, or any third-party domain.</p>
+            <p class="warn-text">Every email sent by VisualNerds — including project quotes, invoices, updates, and support replies — comes exclusively from an <strong style="color:#fff;">@visualnerds.com</strong> address. We never send from .co.uk, .net, Gmail, or any third-party domain.</p>
           </div>
         </div>
         <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px;">
@@ -217,12 +212,12 @@
           </div>
           <div class="check-row" style="border-color:rgba(239,68,68,0.2);">
             <div class="check-icon check-no">✗</div>
-            <div class="check-label" style="color:var(--text-2);">anything@visualnerds.co.uk</div>
+            <div class="check-label" style="color:rgba(255,255,255,0.65);">anything@visualnerds.co.uk</div>
             <div class="check-sub">We do NOT email from this domain</div>
           </div>
           <div class="check-row" style="border-color:rgba(239,68,68,0.2);">
             <div class="check-icon check-no">✗</div>
-            <div class="check-label" style="color:var(--text-2);">Any other domain</div>
+            <div class="check-label" style="color:rgba(255,255,255,0.65);">Any other domain</div>
             <div class="check-sub">Not from us — treat with caution</div>
           </div>
         </div>
@@ -233,7 +228,7 @@
         <div class="warn-icon">⚠️</div>
         <div>
           <div class="warn-title">Watch Out for Impersonation</div>
-          <p class="warn-text">If you receive an email claiming to be from VisualNerds but it comes from a different domain (e.g. visualnerds.co.uk, visualnerds.net, visual-nerds.com, or any free email provider), it is <strong style="color:#f87171;">not from us</strong>. Please do not click any links, make any payments, or share personal information in response.<br><br>Forward suspicious emails to <a href="mailto:support@visualnerds.com" style="color:var(--purple-bright);font-weight:600;">support@visualnerds.com</a> and we'll look into it.</p>
+          <p class="warn-text">If you receive an email claiming to be from VisualNerds but it comes from a different domain (e.g. visualnerds.co.uk, visualnerds.net, visual-nerds.com, or any free email provider), it is <strong style="color:#f87171;">not from us</strong>. Please do not click any links, make any payments, or share personal information in response.<br><br>Forward suspicious emails to <a href="mailto:support@visualnerds.com" style="color:var(--pink);font-weight:600;">support@visualnerds.com</a> and we'll look into it.</p>
         </div>
       </div>
 
@@ -244,76 +239,40 @@
           <div class="check-row">
             <div class="check-icon check-yes" style="font-size:0.7rem;">YT</div>
             <div>
-              <div class="check-label"><a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" target="_blank" rel="noopener" style="color:var(--purple-bright);">@visualnerdsuk</a></div>
+              <div class="check-label"><a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" target="_blank" rel="noopener" style="color:var(--pink);">@visualnerdsuk</a></div>
               <div class="check-sub">YouTube — our only official channel</div>
             </div>
           </div>
         </div>
-        <p style="font-size:0.8rem;color:var(--text-3);margin-top:12px;line-height:1.6;">We currently operate only on YouTube. Any other accounts claiming to be VisualNerds on Instagram, X, LinkedIn, or elsewhere are not official.</p>
-      </div>
-
-      <!-- Still unsure -->
-      <div class="card reveal" style="text-align:center;padding:40px;">
-        <div style="font-size:2rem;margin-bottom:16px;">🔍</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;margin-bottom:10px;">Still Not Sure?</h3>
-        <p style="font-size:0.875rem;color:var(--text-2);line-height:1.7;max-width:480px;margin:0 auto 24px;">If you're unsure whether something came from us — an email, an invoice, a social DM — just ask. Email us directly and we'll confirm within hours.</p>
-        <a href="mailto:support@visualnerds.com" class="btn btn-primary">Email support@visualnerds.com</a>
-        <p style="font-size:0.75rem;color:var(--text-3);margin-top:10px;">By emailing us you agree to our <a href="terms.html" style="color:var(--text-3);text-decoration:underline;">Terms &amp; Conditions</a>.</p>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.4);margin-top:12px;line-height:1.6;">We currently operate only on YouTube. Any other accounts claiming to be VisualNerds on Instagram, X, LinkedIn, or elsewhere are not official.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="display:inline-flex;">
-          <div class="logo-mark">VN</div>VisualNerds
-        </a>
-        <p>AI-native film studio crafting visual stories at the intersection of technology and human imagination.</p>
-      </div>
-      <div>
-        <div class="footer-col-title">Navigate</div>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Work</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="official-sites.html">Official Sites</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="our-technology.html">Our Technology</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Services</div>
-        <ul class="footer-links">
-          <li><a href="services.html">AI Film Generation</a></li>
-          <li><a href="services.html">Visual Effects</a></li>
-          <li><a href="services.html">Brand Storytelling</a></li>
-          <li><a href="services.html">Post Production</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <ul class="footer-links">
-          <li><a href="mailto:support@visualnerds.com">support@visualnerds.com</a></li>
-          <li><a href="contact.html">Start a Project</a></li>
-          <li><a href="press.html">Press</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms &amp; Conditions</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 VisualNerds.com — All rights reserved. <a href="privacy.html" style="color:var(--text-3);margin-left:16px;">Privacy Policy</a><a href="terms.html" style="color:var(--text-3);margin-left:8px;">Terms</a></span>
-      <div class="social-links">
-        <a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
-      </div>
-    </div>
+<section class="pg-cta">
+  <div class="pg-cta__inner">
+    <h2 class="pg-cta__title">STILL NOT<br><span class="vn-pink">SURE?</span></h2>
+    <p class="pg-cta__sub">If you're unsure whether something came from us — an email, an invoice, a social DM — just ask. Email us directly and we'll confirm within hours.</p>
+    <a href="mailto:support@visualnerds.com" class="vn-btn">EMAIL SUPPORT@VISUALNERDS.COM</a>
+  </div>
+</section>
+
+<footer class="vn-footer">
+  <div class="vn-footer__top">
+    <div class="vn-footer__logo">VISUAL <span class="vn-pink">NERDS</span></div>
+    <p class="vn-footer__tagline">AI-powered film &amp; television.<br>Made by nerds. Watched by everyone.</p>
+  </div>
+  <div class="vn-footer__socials">
+    <a href="#" class="vn-social" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg></a>
+    <a href="#" class="vn-social" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" class="vn-social" aria-label="YouTube" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+    <a href="#" class="vn-social" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+  </div>
+  <div class="vn-footer__bottom">
+    <span>© 2026 VisualNerds.com — All rights reserved.</span>
+    <div class="vn-footer__legal"><a href="press.html">Press</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
   </div>
 </footer>
 

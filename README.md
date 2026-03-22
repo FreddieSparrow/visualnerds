@@ -1,70 +1,115 @@
-# VisualNerds — AI Film Studio
+# Visual Nerds — AI & VFX
 
-Official website for **VisualNerds**, an AI-native film studio based near London, UK. Live at [visualnerds.com](https://visualnerds.com) and [visualnerds.co.uk](https://visualnerds.co.uk).
+Official website for **Visual Nerds**, an AI film and VFX studio. Live at [visualnerds.com](https://visualnerds.com) and [visualnerds.co.uk](https://visualnerds.co.uk).
+
+**Made by nerds. Watched by everyone.**
+
+---
+
+## Brand
+
+- **Primary colour:** Hot Pink `#FF2D88`
+- **Secondary:** Electric Blue `#00C2FF` · Acid Yellow `#FFE600`
+- **Background:** Ink `#0A0A0B`
+- **Headlines:** Syne ExtraBold 800
+- **Labels / UI:** Space Mono
+- **Body:** DM Sans
+
+---
 
 ## Stack
 
 Pure static site — HTML5 / CSS3 / Vanilla JS. No build tools, no frameworks, no dependencies beyond Google Fonts.
 
-## Structure
+---
+
+## Site Structure
 
 ```
-/                    ← all files served from root
-├── index.html       ← homepage
-├── about.html
-├── portfolio.html
-├── services.html
-├── contact.html
-├── faq.html
-├── press.html
-├── our-technology.html
-├── official-sites.html
-├── terms.html       ← Terms & Conditions
-├── privacy.html     ← Privacy Policy
-├── coming-soon.html ← placeholder for upcoming services
-├── styles.css       ← all styles
-├── app.js           ← all JS (nav, canvas, typewriter, counters, etc.)
-├── CNAME            ← GitHub Pages custom domain
-└── ai-*.html        ← SEO redirect pages (→ index.html or services.html)
+/
+├── index.html          ← Single-page homepage (Hero · Reel · Work · Contact)
+├── about.html          ← About page
+├── portfolio.html      ← Full work / project list
+├── services.html       ← Services overview
+├── contact.html        ← Contact form
+├── faq.html            ← FAQ
+├── press.html          ← Press coverage
+├── our-technology.html ← Technology stack info
+├── official-sites.html ← Official domains info
+├── privacy.html        ← Privacy Policy
+├── terms.html          ← Terms & Conditions
+├── styles.css          ← All styles (brand design system)
+├── app.js              ← All JS (nav, mobile menu, video modal, contact form)
+├── CNAME               ← GitHub Pages custom domain (visualnerds.com)
+└── ai-*.html           ← SEO redirect pages → main domain
 ```
 
-## GitHub Pages Deployment (via Cloudflare)
+### Homepage sections (index.html)
 
-Both domains are managed through Cloudflare.
+| Anchor    | Content                                      |
+|-----------|----------------------------------------------|
+| `#home`   | Hero — full-bleed image, VISUAL NERDS / AI & VFX branding |
+| `#reel`   | Vimeo showreel embed (add `data-vimeo="ID"`) |
+| `#work`   | Project list table — DATE · VIDEO NAME · CLIENT · PLAY |
+| `#contact`| Enquiry form + email                         |
 
-### Step 1 — GitHub Pages settings
-1. Push all files to the `main` branch (files live in the **repository root**)
-2. Go to **Settings → Pages** in the GitHub repo → set source to `main`, root `/`
-3. The `CNAME` file already contains `visualnerds.com` — GitHub Pages will use it
+---
+
+## Adding Content
+
+### Hero image
+Replace the placeholder `<div class="vn-hero__bg">` in `index.html` with:
+```html
+<img src="hero.jpg" class="vn-hero__img" alt="Visual Nerds">
+```
+Or set `style="background-image:url('hero.jpg')"` on `.vn-hero__bg`.
+
+### Reel video
+Add `data-vimeo="YOUR_VIMEO_ID"` to the `#reelPlay` element, or replace the placeholder with a full Vimeo `<iframe>` embed inside `.vn-reel__frame`.
+
+### Work table rows
+In `index.html` (and `portfolio.html`), fill in each `.vn-work__row` and add `data-vimeo="VIMEO_ID"` to the PLAY button:
+```html
+<div class="vn-work__row">
+  <span class="vn-work__date">2025</span>
+  <span class="vn-work__name">Your Video Title</span>
+  <span class="vn-work__client">Client Name</span>
+  <button class="vn-work__play" data-vimeo="123456789">▶ PLAY</button>
+</div>
+```
+
+### Social links
+Replace `href="#"` on the `.vn-social` icon links in the footer of each page.
+
+---
+
+## Deployment (GitHub Pages + Cloudflare)
+
+### Step 1 — GitHub Pages
+1. Push all files to `main` branch (files live in **repository root**)
+2. **Settings → Pages** → source: `main`, root `/`
+3. `CNAME` file already contains `visualnerds.com`
 
 ### Step 2 — visualnerds.com DNS (Cloudflare)
-In the `visualnerds.com` Cloudflare dashboard → **DNS**:
-- Add 4 × **A records** for `@` (apex), each set to **DNS only (grey cloud)**:
-  - `185.199.108.153`
-  - `185.199.109.153`
-  - `185.199.110.153`
-  - `185.199.111.153`
-- Add a **CNAME** record: `www` → `USERNAME.github.io` — set to **DNS only (grey cloud)**
-- ⚠️ Keep these **grey cloud (DNS only)** — if proxied, GitHub Pages HTTPS cert provisioning breaks
+In the `visualnerds.com` Cloudflare dashboard → **DNS** (all set to **DNS only / grey cloud**):
+- 4 × A records for `@`: `185.199.108.153` · `.109.` · `.110.` · `.111.153`
+- CNAME: `www` → `USERNAME.github.io`
 
-Then in GitHub Pages Settings → enable **Enforce HTTPS**.
+Enable **Enforce HTTPS** in GitHub Pages Settings.
 
 ### Step 3 — visualnerds.co.uk redirect (Cloudflare)
-GitHub Pages only supports one custom apex domain per repo, so `.co.uk` must redirect.
+In the `visualnerds.co.uk` dashboard:
+1. DNS — placeholder A record `@` → `192.0.2.1` (**Proxied**)
+2. Rules → Redirect Rules:
+   - Match: `Hostname equals visualnerds.co.uk`
+   - Action: Dynamic redirect
+   - URL: `concat("https://visualnerds.com", http.request.uri.path)`
+   - Status: `301`
 
-In the `visualnerds.co.uk` Cloudflare dashboard:
-1. **DNS** — add a placeholder A record: `@` → `192.0.2.1`, set to **Proxied (orange cloud)** (needed for the redirect to fire)
-2. **Rules → Redirect Rules** → Create rule:
-   - Name: `Redirect .co.uk to .com`
-   - Field: `Hostname` / `equals` / `visualnerds.co.uk`
-   - Action: **Dynamic redirect**
-   - URL expression: `concat("https://visualnerds.com", http.request.uri.path)`
-   - Status code: `301`
-3. This forwards `visualnerds.co.uk/any/page` → `visualnerds.com/any/page` with full HTTPS
+---
 
 ## Notes
 
-- Email addresses in certain CTAs are base64-obfuscated and decoded at runtime by `app.js` — this is intentional spam prevention
-- SEO redirect pages (`ai-*.html`, `3d-printing.html`, etc.) use instant meta-refresh + JS redirect with canonical URLs pointing to the main domain
+- Email is base64-obfuscated in `app.js` and decoded at runtime (spam prevention)
+- SEO redirect pages use meta-refresh + JS redirect with canonical URLs
 - Legal documents (terms.html, privacy.html) are governed by the laws of England and Wales
-- All content was created in whole or in part with AI assistance — see Section 17 of terms.html
