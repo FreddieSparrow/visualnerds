@@ -16,13 +16,13 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(124,58,237,0.09) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(6,182,212,0.05) 1px, transparent 1px);
+        linear-gradient(rgba(124,58,237,0.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6,182,212,0.09) 1px, transparent 1px);
       background-size: 55px 55px;
       transform: perspective(550px) rotateX(32deg) scaleX(1.15);
       transform-origin: center 90%;
-      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 40%, transparent 65%);
-      mask-image: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 40%, transparent 65%);
+      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 40%, transparent 60%);
+      mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 40%, transparent 60%);
       animation: grid-drift 10s linear infinite;
       pointer-events: none;
       z-index: 1;
@@ -38,7 +38,7 @@
       inset: 0;
       pointer-events: none;
       overflow: hidden;
-      z-index: 1;
+      z-index: 2;
     }
     .hero-fragments span {
       position: absolute;
@@ -47,35 +47,35 @@
       font-size: 0.62rem;
       font-weight: 600;
       letter-spacing: 0.06em;
-      color: rgba(124,58,237,0.25);
+      color: rgba(124,58,237,0.32);
       animation: frag-rise linear infinite;
       pointer-events: none;
       white-space: nowrap;
       user-select: none;
     }
-    .hero-fragments span:nth-child(even) { color: rgba(6,182,212,0.2); }
+    .hero-fragments span:nth-child(even) { color: rgba(6,182,212,0.28); }
     @keyframes frag-rise {
       0%   { transform: translateY(0);      opacity: 0; }
       8%   { opacity: 1; }
-      88%  { opacity: 0.45; }
+      88%  { opacity: 0.55; }
       100% { transform: translateY(-108vh); opacity: 0; }
     }
 
     /* ── HERO CENTRE PULSE ─── */
     .hero-pulse-ring {
       position: absolute;
-      width: 700px;
-      height: 700px;
+      width: 900px;
+      height: 900px;
       left: 50%; top: 50%;
       transform: translate(-50%, -50%);
-      background: radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(124,58,237,0.11) 0%, rgba(6,182,212,0.04) 40%, transparent 70%);
       animation: ring-breathe 7s ease-in-out infinite;
       pointer-events: none;
       z-index: 1;
     }
     @keyframes ring-breathe {
-      0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-      50%       { opacity: 1;   transform: translate(-50%, -50%) scale(1.18); }
+      0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(1); }
+      50%       { opacity: 1;    transform: translate(-50%, -50%) scale(1.22); }
     }
 
     /* ── SCAN LINE OVERLAY ─── */
@@ -91,6 +91,140 @@
       );
       pointer-events: none;
       z-index: 1;
+    }
+
+    /* ── CINEMATIC VIGNETTE ─── */
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 45%, transparent 28%, rgba(0,0,0,0.62) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ── AURORA GLOW (bottom edge) ─── */
+    .hero-aurora {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130%;
+      height: 260px;
+      background: linear-gradient(to top,
+        rgba(124,58,237,0.18) 0%,
+        rgba(6,182,212,0.09) 45%,
+        transparent 100%);
+      filter: blur(28px);
+      pointer-events: none;
+      z-index: 1;
+      animation: aurora-pulse 9s ease-in-out infinite;
+    }
+    @keyframes aurora-pulse {
+      0%, 100% { opacity: 0.6;  transform: translateX(-50%) scaleX(1); }
+      50%       { opacity: 1;   transform: translateX(-50%) scaleX(1.09); }
+    }
+
+    /* ── HORIZON LINE ─── */
+    .hero-horizon {
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(124,58,237,0.6) 20%, rgba(6,182,212,0.5) 50%, rgba(124,58,237,0.6) 80%, transparent 100%);
+      pointer-events: none;
+      z-index: 2;
+      animation: horizon-pulse 4s ease-in-out infinite;
+    }
+    @keyframes horizon-pulse {
+      0%, 100% { opacity: 0.35; }
+      50%       { opacity: 1; }
+    }
+
+    /* ── LIGHT STREAKS ─── */
+    .hero-streaks {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .hero-streaks span {
+      position: absolute;
+      width: 1.5px;
+      border-radius: 99px;
+      animation: streak-fall linear infinite;
+      pointer-events: none;
+    }
+    .hero-streaks span:nth-child(1) {
+      height: 150px;
+      background: linear-gradient(to bottom, transparent, rgba(124,58,237,0.9), transparent);
+      left: 18%;
+      top: -200px;
+      animation-duration: 5.5s;
+      animation-delay: 0.5s;
+    }
+    .hero-streaks span:nth-child(2) {
+      height: 100px;
+      background: linear-gradient(to bottom, transparent, rgba(6,182,212,0.85), transparent);
+      left: 42%;
+      top: -200px;
+      animation-duration: 7.5s;
+      animation-delay: 2.8s;
+      width: 1px;
+    }
+    .hero-streaks span:nth-child(3) {
+      height: 190px;
+      background: linear-gradient(to bottom, transparent, rgba(124,58,237,0.75), rgba(6,182,212,0.55), transparent);
+      width: 2px;
+      left: 67%;
+      top: -200px;
+      animation-duration: 6.2s;
+      animation-delay: 1.2s;
+    }
+    .hero-streaks span:nth-child(4) {
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, rgba(6,182,212,0.9), transparent);
+      left: 83%;
+      top: -200px;
+      animation-duration: 9s;
+      animation-delay: 4.5s;
+      width: 1px;
+    }
+    .hero-streaks span:nth-child(5) {
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, rgba(124,58,237,0.8), transparent);
+      left: 8%;
+      top: -200px;
+      animation-duration: 8.5s;
+      animation-delay: 6.5s;
+    }
+    .hero-streaks span:nth-child(6) {
+      height: 90px;
+      background: linear-gradient(to bottom, transparent, rgba(6,182,212,0.7), transparent);
+      left: 55%;
+      top: -200px;
+      animation-duration: 11s;
+      animation-delay: 9s;
+      width: 1px;
+    }
+    @keyframes streak-fall {
+      0%   { transform: translateY(0) rotate(4deg); opacity: 0; }
+      5%   { opacity: 1; }
+      90%  { opacity: 0.8; }
+      100% { transform: translateY(110vh) rotate(4deg); opacity: 0; }
+    }
+
+    /* ── TITLE GLITCH ─── */
+    .hero-title {
+      animation: title-glitch 14s infinite;
+    }
+    @keyframes title-glitch {
+      0%, 91%, 100% { text-shadow: none; filter: none; }
+      92%   { text-shadow: -3px 0 rgba(6,182,212,0.7), 3px 0 rgba(239,68,68,0.5); filter: brightness(1.15); }
+      92.4% { text-shadow: 2px 0 rgba(124,58,237,0.85), -2px 0 rgba(6,182,212,0.6); }
+      92.8% { text-shadow: none; filter: brightness(1.05); }
+      93.2% { text-shadow: -1px 0 rgba(239,68,68,0.55), 1px 0 rgba(6,182,212,0.6); }
+      93.6% { text-shadow: none; filter: none; }
     }
   </style>
 </head>
@@ -150,6 +284,19 @@
     <span style="left:75%;animation-duration:26s;animation-delay:5s;">RENDER</span>
     <span style="left:84%;animation-duration:21s;animation-delay:7s;">ReLU</span>
     <span style="left:92%;animation-duration:24s;animation-delay:2s;">01110011</span>
+    <span style="left:6%;animation-duration:32s;animation-delay:14s;">LATENT</span>
+    <span style="left:23%;animation-duration:27s;animation-delay:17s;">1101.FFT</span>
+    <span style="left:34%;animation-duration:21s;animation-delay:12s;">ATTENTION</span>
+    <span style="left:52%;animation-duration:29s;animation-delay:19s;">ΣWEIGHTS</span>
+    <span style="left:63%;animation-duration:24s;animation-delay:7s;">TOKENISE</span>
+    <span style="left:78%;animation-duration:33s;animation-delay:22s;">GAN.v4</span>
+    <span style="left:88%;animation-duration:20s;animation-delay:15s;">EMBED_512</span>
+  </div>
+  <div class="hero-vignette"></div>
+  <div class="hero-aurora"></div>
+  <div class="hero-horizon"></div>
+  <div class="hero-streaks" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
   </div>
 
   <div class="hero-content">

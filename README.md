@@ -39,7 +39,19 @@ This site is deployed via GitHub Pages with a custom domain.
 5. Configure DNS at your domain registrar:
    - `A` records pointing to GitHub Pages IPs: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
    - `CNAME` record: `www` → `freddieSparrow.github.io` (replace with your GitHub username)
-   - For `visualnerds.co.uk`: redirect at the registrar level to `visualnerds.com`
+   - Enforce HTTPS in GitHub Pages Settings
+
+## Multi-domain setup (visualnerds.co.uk → visualnerds.com)
+
+GitHub Pages only supports **one** custom apex domain per repository (set in the `CNAME` file — currently `visualnerds.com`). The `.co.uk` domain cannot be a second GitHub Pages domain on the same repo. Instead, configure forwarding at the **domain registrar**:
+
+### Option A — Registrar URL forwarding (simplest)
+In your `.co.uk` registrar control panel, add a **301 permanent redirect** (URL forwarding) from `visualnerds.co.uk` to `https://visualnerds.com`. Most registrars (Namecheap, GoDaddy, 123-reg, etc.) offer this as "URL Redirect" or "Web Forwarding" in DNS settings. This requires no code changes.
+
+### Option B — Cloudflare (recommended for HTTPS + naked domain)
+1. Add both `visualnerds.com` and `visualnerds.co.uk` to a free Cloudflare account
+2. On `visualnerds.co.uk`, add a **Page Rule** (or Redirect Rule): `visualnerds.co.uk/*` → `https://visualnerds.com/$1` (301)
+3. This preserves HTTPS on the `.co.uk` domain before redirecting
 
 ## Notes
 
