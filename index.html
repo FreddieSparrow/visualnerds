@@ -3,247 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VisualNerds — AI Film Studio</title>
-  <meta name="description" content="We craft AI-powered films, visual stories, and neural narratives that define the future of cinema." />
+  <title>Visual Nerds — AI & VFX</title>
+  <meta name="description" content="AI-powered film & television. Made by nerds. Watched by everyone." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%237c3aed'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'%3EVN%3C/text%3E%3C/svg%3E" />
-  <style>
-    /* ── HERO PERSPECTIVE GRID ─── */
-    .hero-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(124,58,237,0.13) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(6,182,212,0.09) 1px, transparent 1px);
-      background-size: 55px 55px;
-      transform: perspective(550px) rotateX(32deg) scaleX(1.15);
-      transform-origin: center 90%;
-      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 40%, transparent 60%);
-      mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 40%, transparent 60%);
-      animation: grid-drift 10s linear infinite;
-      pointer-events: none;
-      z-index: 1;
-    }
-    @keyframes grid-drift {
-      from { background-position: 0 0; }
-      to   { background-position: 0 55px; }
-    }
-
-    /* ── FLOATING DATA FRAGMENTS ─── */
-    .hero-fragments {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 2;
-    }
-    .hero-fragments span {
-      position: absolute;
-      bottom: -30px;
-      font-family: 'Space Grotesk', monospace;
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      color: rgba(124,58,237,0.32);
-      animation: frag-rise linear infinite;
-      pointer-events: none;
-      white-space: nowrap;
-      user-select: none;
-    }
-    .hero-fragments span:nth-child(even) { color: rgba(6,182,212,0.28); }
-    @keyframes frag-rise {
-      0%   { transform: translateY(0);      opacity: 0; }
-      8%   { opacity: 1; }
-      88%  { opacity: 0.55; }
-      100% { transform: translateY(-108vh); opacity: 0; }
-    }
-
-    /* ── HERO CENTRE PULSE ─── */
-    .hero-pulse-ring {
-      position: absolute;
-      width: 900px;
-      height: 900px;
-      left: 50%; top: 50%;
-      transform: translate(-50%, -50%);
-      background: radial-gradient(circle, rgba(124,58,237,0.11) 0%, rgba(6,182,212,0.04) 40%, transparent 70%);
-      animation: ring-breathe 7s ease-in-out infinite;
-      pointer-events: none;
-      z-index: 1;
-    }
-    @keyframes ring-breathe {
-      0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(1); }
-      50%       { opacity: 1;    transform: translate(-50%, -50%) scale(1.22); }
-    }
-
-    /* ── SCAN LINE OVERLAY ─── */
-    .hero-scanlines {
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.04) 2px,
-        rgba(0,0,0,0.04) 4px
-      );
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    /* ── CINEMATIC VIGNETTE ─── */
-    .hero-vignette {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 45%, transparent 28%, rgba(0,0,0,0.62) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    /* ── AURORA GLOW (bottom edge) ─── */
-    .hero-aurora {
-      position: absolute;
-      bottom: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 130%;
-      height: 260px;
-      background: linear-gradient(to top,
-        rgba(124,58,237,0.18) 0%,
-        rgba(6,182,212,0.09) 45%,
-        transparent 100%);
-      filter: blur(28px);
-      pointer-events: none;
-      z-index: 1;
-      animation: aurora-pulse 9s ease-in-out infinite;
-    }
-    @keyframes aurora-pulse {
-      0%, 100% { opacity: 0.6;  transform: translateX(-50%) scaleX(1); }
-      50%       { opacity: 1;   transform: translateX(-50%) scaleX(1.09); }
-    }
-
-    /* ── HORIZON LINE ─── */
-    .hero-horizon {
-      position: absolute;
-      bottom: 0;
-      left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(124,58,237,0.6) 20%, rgba(6,182,212,0.5) 50%, rgba(124,58,237,0.6) 80%, transparent 100%);
-      pointer-events: none;
-      z-index: 2;
-      animation: horizon-pulse 4s ease-in-out infinite;
-    }
-    @keyframes horizon-pulse {
-      0%, 100% { opacity: 0.35; }
-      50%       { opacity: 1; }
-    }
-
-    /* ── LIGHT STREAKS ─── */
-    .hero-streaks {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 2;
-    }
-    .hero-streaks span {
-      position: absolute;
-      width: 1.5px;
-      border-radius: 99px;
-      animation: streak-fall linear infinite;
-      pointer-events: none;
-    }
-    .hero-streaks span:nth-child(1) {
-      height: 150px;
-      background: linear-gradient(to bottom, transparent, rgba(124,58,237,0.9), transparent);
-      left: 18%;
-      top: -200px;
-      animation-duration: 5.5s;
-      animation-delay: 0.5s;
-    }
-    .hero-streaks span:nth-child(2) {
-      height: 100px;
-      background: linear-gradient(to bottom, transparent, rgba(6,182,212,0.85), transparent);
-      left: 42%;
-      top: -200px;
-      animation-duration: 7.5s;
-      animation-delay: 2.8s;
-      width: 1px;
-    }
-    .hero-streaks span:nth-child(3) {
-      height: 190px;
-      background: linear-gradient(to bottom, transparent, rgba(124,58,237,0.75), rgba(6,182,212,0.55), transparent);
-      width: 2px;
-      left: 67%;
-      top: -200px;
-      animation-duration: 6.2s;
-      animation-delay: 1.2s;
-    }
-    .hero-streaks span:nth-child(4) {
-      height: 80px;
-      background: linear-gradient(to bottom, transparent, rgba(6,182,212,0.9), transparent);
-      left: 83%;
-      top: -200px;
-      animation-duration: 9s;
-      animation-delay: 4.5s;
-      width: 1px;
-    }
-    .hero-streaks span:nth-child(5) {
-      height: 120px;
-      background: linear-gradient(to bottom, transparent, rgba(124,58,237,0.8), transparent);
-      left: 8%;
-      top: -200px;
-      animation-duration: 8.5s;
-      animation-delay: 6.5s;
-    }
-    .hero-streaks span:nth-child(6) {
-      height: 90px;
-      background: linear-gradient(to bottom, transparent, rgba(6,182,212,0.7), transparent);
-      left: 55%;
-      top: -200px;
-      animation-duration: 11s;
-      animation-delay: 9s;
-      width: 1px;
-    }
-    @keyframes streak-fall {
-      0%   { transform: translateY(0) rotate(4deg); opacity: 0; }
-      5%   { opacity: 1; }
-      90%  { opacity: 0.8; }
-      100% { transform: translateY(110vh) rotate(4deg); opacity: 0; }
-    }
-
-    /* ── TITLE GLITCH ─── */
-    .hero-title {
-      animation: title-glitch 14s infinite;
-    }
-    @keyframes title-glitch {
-      0%, 91%, 100% { text-shadow: none; filter: none; }
-      92%   { text-shadow: -3px 0 rgba(6,182,212,0.7), 3px 0 rgba(239,68,68,0.5); filter: brightness(1.15); }
-      92.4% { text-shadow: 2px 0 rgba(124,58,237,0.85), -2px 0 rgba(6,182,212,0.6); }
-      92.8% { text-shadow: none; filter: brightness(1.05); }
-      93.2% { text-shadow: -1px 0 rgba(239,68,68,0.55), 1px 0 rgba(6,182,212,0.6); }
-      93.6% { text-shadow: none; filter: none; }
-    }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%230A0A0B'/%3E%3Ctext x='50%25' y='55%25' font-family='sans-serif' font-size='16' font-weight='800' fill='%23FF2D88' text-anchor='middle' dominant-baseline='middle'%3EVN%3C/text%3E%3C/svg%3E" />
 </head>
-<body>
+<body class="new-homepage">
 
 <!-- NAVIGATION -->
-<nav>
+<nav id="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-mark">VN</div>
-      VisualNerds
+    <a href="#home" class="nav-logo">
+      VISUAL <span class="nav-dot">•</span> NERDS
     </a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="portfolio.html">Work</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="official-sites.html">Official Sites</a></li>
-      <li><a href="contact.html" class="nav-cta">Start a Project</a></li>
+      <li><a href="#reel">REEL</a></li>
+      <li><a href="#work">WORK</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#contact">CONTACT</a></li>
     </ul>
     <button class="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -253,166 +33,341 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu">
-  <a href="index.html">Home</a>
-  <a href="portfolio.html">Work</a>
-  <a href="services.html">Services</a>
-  <a href="about.html">About</a>
-  <a href="official-sites.html">Official Sites</a>
-  <a href="contact.html">Contact</a>
+  <a href="#reel">REEL</a>
+  <a href="#work">WORK</a>
+  <a href="#about">ABOUT</a>
+  <a href="#contact">CONTACT</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <canvas class="hero-canvas"></canvas>
-  <div class="hero-gradient"></div>
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
+<!-- ══ HERO ══════════════════════════════════════════════════════ -->
+<section class="vn-hero" id="home">
+  <!--
+    HERO BACKGROUND IMAGE
+    When the image is ready, replace the div below with:
+    <img src="hero.jpg" class="vn-hero__img" alt="Visual Nerds">
+    OR set a background-image on .vn-hero__bg via inline style.
+  -->
+  <div class="vn-hero__bg"></div>
+  <div class="vn-hero__overlay"></div>
 
-  <div class="hero-grid"></div>
-  <div class="hero-pulse-ring"></div>
-  <div class="hero-scanlines"></div>
-  <div class="hero-fragments" aria-hidden="true">
-    <span style="left:4%;animation-duration:22s;animation-delay:0s;">01101100</span>
-    <span style="left:11%;animation-duration:28s;animation-delay:4s;">NEURAL</span>
-    <span style="left:19%;animation-duration:20s;animation-delay:8s;">∇θ=0.001</span>
-    <span style="left:28%;animation-duration:25s;animation-delay:1s;">010011</span>
-    <span style="left:37%;animation-duration:18s;animation-delay:6s;">FRAME_24</span>
-    <span style="left:47%;animation-duration:30s;animation-delay:11s;">∫f(x)dx</span>
-    <span style="left:57%;animation-duration:23s;animation-delay:3s;">DIFFUSE</span>
-    <span style="left:66%;animation-duration:19s;animation-delay:9s;">λ=1e-5</span>
-    <span style="left:75%;animation-duration:26s;animation-delay:5s;">RENDER</span>
-    <span style="left:84%;animation-duration:21s;animation-delay:7s;">ReLU</span>
-    <span style="left:92%;animation-duration:24s;animation-delay:2s;">01110011</span>
-    <span style="left:6%;animation-duration:32s;animation-delay:14s;">LATENT</span>
-    <span style="left:23%;animation-duration:27s;animation-delay:17s;">1101.FFT</span>
-    <span style="left:34%;animation-duration:21s;animation-delay:12s;">ATTENTION</span>
-    <span style="left:52%;animation-duration:29s;animation-delay:19s;">ΣWEIGHTS</span>
-    <span style="left:63%;animation-duration:24s;animation-delay:7s;">TOKENISE</span>
-    <span style="left:78%;animation-duration:33s;animation-delay:22s;">GAN.v4</span>
-    <span style="left:88%;animation-duration:20s;animation-delay:15s;">EMBED_512</span>
-  </div>
-  <div class="hero-vignette"></div>
-  <div class="hero-aurora"></div>
-  <div class="hero-horizon"></div>
-  <div class="hero-streaks" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
-
-  <div class="hero-content">
-    <div class="hero-eyebrow">
-      <span class="dot"></span>
-      Now Accepting Projects for 2026
+  <div class="vn-hero__content">
+    <div class="vn-hero__brand-left">
+      <span>VISUAL</span>
+      <span>NERDS</span>
     </div>
-    <h1 class="hero-title">
-      <span class="line">We Create</span>
-      <span class="line typewriter-wrap">
-        <span class="typewriter"></span><span class="typewriter-cursor"></span>
-      </span>
-    </h1>
-    <p class="hero-sub">Pushing the boundaries of visual storytelling with artificial intelligence. From concept to final frame — we engineer cinematic experiences that don't exist anywhere else.</p>
-    <div class="hero-actions">
-      <a href="contact.html" class="btn btn-primary btn-lg">
-        <span>Start a Project</span>
-        <span>→</span>
-      </a>
-      <a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" target="_blank" rel="noopener" class="btn btn-outline btn-lg">Showcase on YouTube</a>
+
+    <div class="vn-hero__center">
+      <a href="#reel" class="vn-hero__cta">REEL</a>
     </div>
-  </div>
 
-
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-section">
-  <div class="marquee-track">
-    <span class="marquee-item"><span class="dot"></span>AI Images</span>
-    <span class="marquee-item"><span class="dot"></span>AI Videos</span>
-    <span class="marquee-item"><span class="dot"></span>AI Films</span>
-    <span class="marquee-item"><span class="dot"></span>Music Videos</span>
-    <span class="marquee-item"><span class="dot"></span>Brand Content</span>
-    <span class="marquee-item"><span class="dot"></span>AI Commercials</span>
-    <span class="marquee-item"><span class="dot"></span>Visual Effects</span>
-    <span class="marquee-item"><span class="dot"></span>Post Production</span>
-    <span class="marquee-item"><span class="dot"></span>AI Images</span>
-    <span class="marquee-item"><span class="dot"></span>AI Videos</span>
-    <span class="marquee-item"><span class="dot"></span>AI Films</span>
-    <span class="marquee-item"><span class="dot"></span>Music Videos</span>
-    <span class="marquee-item"><span class="dot"></span>Brand Content</span>
-    <span class="marquee-item"><span class="dot"></span>AI Commercials</span>
-    <span class="marquee-item"><span class="dot"></span>Visual Effects</span>
-    <span class="marquee-item"><span class="dot"></span>Post Production</span>
-  </div>
-</div>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-bg"></div>
-  <div class="container" style="position:relative;">
-    <div class="section-label reveal" style="justify-content:center;">Ready?</div>
-    <h2 class="cta-title reveal reveal-delay-1">Let's Build Something<br><span class="grad-text">Impossible</span></h2>
-    <p class="cta-sub reveal reveal-delay-2">Your vision deserves visuals that have never existed before. Let's create them together.</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;" class="reveal reveal-delay-3">
-      <a href="contact.html" class="btn btn-primary btn-lg">Start Your Project</a>
-      <a href="#" data-email="text" class="btn btn-outline btn-lg"></a>
+    <div class="vn-hero__brand-right">
+      <span>AI &amp;</span>
+      <span>VFX</span>
     </div>
-    <p style="font-size:0.75rem;color:var(--text-3);margin-top:12px;text-align:center;">By emailing us you agree to our <a href="terms.html" style="color:var(--text-3);text-decoration:underline;">Terms &amp; Conditions</a>.</p>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="display:inline-flex;">
-          <div class="logo-mark">VN</div>
-          VisualNerds
-        </a>
-        <p>We are an AI-native film studio crafting visual stories at the intersection of technology and human imagination. Based near London, UK — working with clients worldwide.</p>
-      </div>
-      <div>
-        <div class="footer-col-title">Navigate</div>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Work</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="official-sites.html">Official Sites</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="our-technology.html">Our Technology</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Services</div>
-        <ul class="footer-links">
-          <li><a href="services.html">AI Film Generation</a></li>
-          <li><a href="services.html">Visual Effects</a></li>
-          <li><a href="services.html">Brand Storytelling</a></li>
-          <li><a href="services.html">Post Production</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <ul class="footer-links">
-          <li><a href="mailto:support@visualnerds.com">support@visualnerds.com</a></li>
-          <li><a href="contact.html">Start a Project</a></li>
-          <li><a href="press.html">Press</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms &amp; Conditions</a></li>
-        </ul>
-      </div>
+<!-- ══ MARQUEE ════════════════════════════════════════════════════ -->
+<div class="vn-marquee">
+  <div class="vn-marquee__track">
+    <span>AI Images</span><em>•</em>
+    <span>AI Videos</span><em>•</em>
+    <span>AI Films</span><em>•</em>
+    <span>Music Videos</span><em>•</em>
+    <span>Brand Content</span><em>•</em>
+    <span>AI Commercials</span><em>•</em>
+    <span>Visual Effects</span><em>•</em>
+    <span>Post Production</span><em>•</em>
+    <span>AI Images</span><em>•</em>
+    <span>AI Videos</span><em>•</em>
+    <span>AI Films</span><em>•</em>
+    <span>Music Videos</span><em>•</em>
+    <span>Brand Content</span><em>•</em>
+    <span>AI Commercials</span><em>•</em>
+    <span>Visual Effects</span><em>•</em>
+    <span>Post Production</span><em>•</em>
+  </div>
+</div>
+
+<!-- ══ REEL ══════════════════════════════════════════════════════ -->
+<section class="vn-section" id="reel">
+  <div class="vn-section__label">
+    <span class="vn-num">01</span> REEL
+  </div>
+
+  <!--
+    VIMEO EMBED
+    Replace the placeholder div below with your Vimeo embed code.
+    Example:
+    <div class="vn-reel__frame">
+      <iframe src="https://player.vimeo.com/video/YOUR_VIDEO_ID?title=0&byline=0"
+              frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 VisualNerds.com — All rights reserved. <a href="privacy.html" style="color:var(--text-3);margin-left:16px;">Privacy Policy</a><a href="terms.html" style="color:var(--text-3);margin-left:8px;">Terms</a></span>
-      <div class="social-links">
-        <a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
-      </div>
+  -->
+  <div class="vn-reel__placeholder" id="reelPlay" data-vimeo="">
+    <div class="vn-reel__play">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+        <circle cx="28" cy="28" r="27" stroke="white" stroke-width="1.5" opacity="0.5"/>
+        <path d="M23 19L39 28L23 37V19Z" fill="white"/>
+      </svg>
+    </div>
+    <p class="vn-reel__label">WATCH REEL</p>
+    <p class="vn-reel__sub">VISUAL NERDS — AI &amp; VFX SHOWREEL 2025</p>
+  </div>
+</section>
+
+<!-- ══ WORK ══════════════════════════════════════════════════════ -->
+<section class="vn-work" id="work">
+  <div class="vn-section__label">
+    <span class="vn-num">02</span> WORK
+  </div>
+
+  <div class="vn-work__table">
+    <div class="vn-work__head">
+      <span>DATE</span>
+      <span>VIDEO NAME</span>
+      <span>CLIENT</span>
+      <span>PLAY</span>
+    </div>
+
+    <!--
+      WORK ROWS
+      Fill in DATE, VIDEO NAME, CLIENT for each project.
+      Add data-vimeo="YOUR_VIMEO_ID" to the PLAY button to enable the video modal.
+    -->
+    <div class="vn-work__row">
+      <span class="vn-work__date">2025</span>
+      <span class="vn-work__name">Project Title</span>
+      <span class="vn-work__client">Client Name</span>
+      <button class="vn-work__play" data-vimeo="">▶ PLAY</button>
+    </div>
+    <div class="vn-work__row">
+      <span class="vn-work__date">2025</span>
+      <span class="vn-work__name">Project Title</span>
+      <span class="vn-work__client">Client Name</span>
+      <button class="vn-work__play" data-vimeo="">▶ PLAY</button>
+    </div>
+    <div class="vn-work__row">
+      <span class="vn-work__date">2025</span>
+      <span class="vn-work__name">Project Title</span>
+      <span class="vn-work__client">Client Name</span>
+      <button class="vn-work__play" data-vimeo="">▶ PLAY</button>
+    </div>
+    <div class="vn-work__row">
+      <span class="vn-work__date">2025</span>
+      <span class="vn-work__name">Project Title</span>
+      <span class="vn-work__client">Client Name</span>
+      <button class="vn-work__play" data-vimeo="">▶ PLAY</button>
+    </div>
+    <div class="vn-work__row">
+      <span class="vn-work__date">2025</span>
+      <span class="vn-work__name">Project Title</span>
+      <span class="vn-work__client">Client Name</span>
+      <button class="vn-work__play" data-vimeo="">▶ PLAY</button>
+    </div>
+    <div class="vn-work__row">
+      <span class="vn-work__date">2024</span>
+      <span class="vn-work__name">Project Title</span>
+      <span class="vn-work__client">Client Name</span>
+      <button class="vn-work__play" data-vimeo="">▶ PLAY</button>
+    </div>
+    <div class="vn-work__row">
+      <span class="vn-work__date">2024</span>
+      <span class="vn-work__name">Project Title</span>
+      <span class="vn-work__client">Client Name</span>
+      <button class="vn-work__play" data-vimeo="">▶ PLAY</button>
+    </div>
+    <div class="vn-work__row">
+      <span class="vn-work__date">2024</span>
+      <span class="vn-work__name">Project Title</span>
+      <span class="vn-work__client">Client Name</span>
+      <button class="vn-work__play" data-vimeo="">▶ PLAY</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ═════════════════════════════════════════════════════ -->
+<section class="vn-section vn-about" id="about">
+  <div class="vn-section__label">
+    <span class="vn-num">03</span> ABOUT
+  </div>
+
+  <div class="vn-about__inner">
+    <div class="vn-about__text">
+      <h2 class="vn-about__headline">VISUAL <span class="vn-pink">NERDS.</span></h2>
+      <p class="vn-about__tagline">AI-powered film &amp; television.<br>Made by nerds. Watched by everyone.</p>
+      <p class="vn-about__body">We are an AI film studio. We use artificial intelligence to create cinematic visual content — films, commercials, music videos, and brand stories — for clients who want visuals that couldn't be made any other way.</p>
+      <p class="vn-about__body">Technology is a tool, not the art. Every decision we make is in service of the story and the emotional experience of the audience. The AI serves the film — not the other way around.</p>
+      <p class="vn-about__body">If you'd like to know more about us, reach out directly. We'd rather have a real conversation than fill a page with marketing copy.</p>
+      <a href="#contact" class="vn-btn">GET IN TOUCH</a>
+    </div>
+
+    <div class="vn-about__images">
+      <!--
+        ABOUT IMAGES
+        Add images here when available. Example:
+        <img src="about-1.jpg" alt="Visual Nerds studio" class="vn-about__img">
+        <img src="about-2.jpg" alt="Behind the scenes" class="vn-about__img">
+      -->
+      <div class="vn-about__img-placeholder"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════════════════════════════ -->
+<section class="vn-section vn-contact" id="contact">
+  <div class="vn-section__label">
+    <span class="vn-num">04</span> CONTACT
+  </div>
+
+  <div class="vn-contact__inner">
+    <div class="vn-contact__text">
+      <h2 class="vn-contact__headline">LET'S MAKE<br><span class="vn-pink">SOMETHING.</span></h2>
+      <p class="vn-contact__sub">Your vision deserves visuals that have never existed before. Let's create them together.</p>
+      <a href="mailto:support@visualnerds.com" class="vn-contact__email">support@visualnerds.com</a>
+      <p class="vn-contact__legal">Based near London, UK — working worldwide.</p>
+    </div>
+
+    <div class="vn-contact__form-wrap">
+      <form class="vn-contact__form" id="contactForm">
+        <div class="vn-form__row">
+          <input type="text" name="name" placeholder="YOUR NAME" required />
+        </div>
+        <div class="vn-form__row">
+          <input type="email" name="email" placeholder="YOUR EMAIL" required />
+        </div>
+        <div class="vn-form__row">
+          <input type="text" name="company" placeholder="COMPANY / PROJECT" />
+        </div>
+        <div class="vn-form__row">
+          <textarea name="message" rows="5" placeholder="TELL US ABOUT YOUR PROJECT" required></textarea>
+        </div>
+        <button type="submit" class="vn-btn vn-btn--full">SEND ENQUIRY →</button>
+        <p class="vn-form__legal">By submitting you agree to our <a href="terms.html">Terms &amp; Conditions</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════════════════════ -->
+<footer class="vn-footer" id="footer">
+  <div class="vn-footer__top">
+    <div class="vn-footer__logo">VISUAL <span class="vn-pink">NERDS</span></div>
+    <p class="vn-footer__tagline">AI-powered film &amp; television.<br>Made by nerds. Watched by everyone.</p>
+    <nav class="vn-footer__nav">
+      <a href="#reel">REEL</a>
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </div>
+
+  <div class="vn-footer__socials">
+    <!-- Replace # with your actual social media URLs -->
+    <a href="#" class="vn-social" aria-label="TikTok">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg>
+    </a>
+    <a href="#" class="vn-social" aria-label="Instagram">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/channel/UC2vlQMffFu1RO6LWIXIU4lA" class="vn-social" aria-label="YouTube" target="_blank" rel="noopener">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+    </a>
+    <a href="#" class="vn-social" aria-label="Facebook">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+  </div>
+
+  <div class="vn-footer__bottom">
+    <span>© 2026 VisualNerds.com — All rights reserved.</span>
+    <div class="vn-footer__legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
     </div>
   </div>
 </footer>
 
+<!-- ══ VIDEO MODAL ════════════════════════════════════════════════ -->
+<div class="vn-modal" id="videoModal">
+  <div class="vn-modal__backdrop" id="modalBackdrop"></div>
+  <div class="vn-modal__content">
+    <button class="vn-modal__close" id="modalClose">✕</button>
+    <div class="vn-modal__embed" id="modalEmbed"></div>
+  </div>
+</div>
+
 <script src="app.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var modal   = document.getElementById('videoModal');
+  var embed   = document.getElementById('modalEmbed');
+
+  function openModal(vimeoId) {
+    if (!vimeoId) return;
+    embed.innerHTML =
+      '<iframe src="https://player.vimeo.com/video/' + vimeoId +
+      '?autoplay=1&title=0&byline=0&portrait=0" width="100%" height="100%"' +
+      ' frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    embed.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+
+  // Work table PLAY buttons
+  document.querySelectorAll('.vn-work__play').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      openModal(this.dataset.vimeo);
+    });
+  });
+
+  // Reel placeholder
+  var reelEl = document.getElementById('reelPlay');
+  if (reelEl) {
+    reelEl.addEventListener('click', function () {
+      openModal(this.dataset.vimeo);
+    });
+  }
+
+  // Close modal
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  document.getElementById('modalBackdrop').addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Contact form — mailto fallback
+  var form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var n = form.querySelector('[name=name]').value;
+      var em = form.querySelector('[name=email]').value;
+      var co = form.querySelector('[name=company]').value;
+      var msg = form.querySelector('[name=message]').value;
+      window.location.href =
+        'mailto:support@visualnerds.com' +
+        '?subject=' + encodeURIComponent('Enquiry from ' + n) +
+        '&body=' + encodeURIComponent(
+          'Name: ' + n + '\nEmail: ' + em + '\nCompany/Project: ' + co + '\n\n' + msg
+        );
+    });
+  }
+
+  // Close mobile menu on anchor link click
+  document.querySelectorAll('.mobile-menu a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      document.querySelector('.mobile-menu').classList.remove('open');
+      document.body.classList.remove('menu-open');
+    });
+  });
+})();
+</script>
 </body>
 </html>
