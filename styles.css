@@ -972,6 +972,69 @@ footer {
   transform: scale(1.04);
 }
 
+.vn-hero__tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   QUICK CONTACT STRIP
+══════════════════════════════════════════════════════════════ */
+.vn-quick-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 36px 40px;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.vn-quick-contact__line {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--text-2);
+  margin: 0;
+}
+
+.vn-quick-contact__email {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--pink);
+  letter-spacing: 0.04em;
+  transition: color var(--transition);
+}
+
+.vn-quick-contact__email:hover {
+  color: var(--pink-bright);
+}
+
+.vn-quick-contact__btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--pink);
+  color: white;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.vn-quick-contact__btn:hover {
+  background: var(--pink-bright);
+  transform: translateY(-1px);
+}
+
 /* ══════════════════════════════════════════════════════════════
    MARQUEE — NEW HOMEPAGE
 ══════════════════════════════════════════════════════════════ */
