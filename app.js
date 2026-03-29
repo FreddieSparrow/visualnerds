@@ -147,8 +147,9 @@ class NeuralNet {
   stop() { if (this.raf) cancelAnimationFrame(this.raf); }
 }
 
+// Gate: only run neural canvas on capable devices with WebGL
 const heroCanvas = document.querySelector('.hero-canvas');
-if (heroCanvas) {
+if (heroCanvas && window.VN?.device?.features?.neuralCanvas) {
   const nn = new NeuralNet(heroCanvas);
   nn.start();
 }
@@ -156,7 +157,7 @@ if (heroCanvas) {
 
 // ── TYPEWRITER ─────────────────────────────────────────────────
 const typer = document.querySelector('.typewriter');
-if (typer) {
+if (typer && window.VN?.device?.features?.typewriter !== false) {
   const words = ['AI Films', 'Visual Stories', 'Future Cinema', 'Neural Narratives', 'Digital Dreams'];
   let wi = 0, ci = 0, deleting = false;
   const speed = { type: 90, delete: 50, pause: 2000 };
@@ -193,6 +194,11 @@ function animateCounter(el) {
 }
 
 // ── SCROLL REVEAL + COUNTERS ───────────────────────────────────
+// On low-end devices, show all reveal elements immediately without animation
+if (window.VN?.device?.features?.scrollReveal === false) {
+  document.querySelectorAll('.reveal, .stat-item').forEach(el => el.classList.add('in-view'));
+}
+
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -240,6 +246,8 @@ if (filterBtns.length && portfolioCards.length) {
 }
 
 // ── MAGNETIC BUTTONS ───────────────────────────────────────────
+// Desktop + capable devices only
+if (window.VN?.device?.features?.magneticButtons !== false)
 document.querySelectorAll('.btn-primary').forEach(btn => {
   btn.addEventListener('mousemove', e => {
     const r = btn.getBoundingClientRect();
@@ -264,6 +272,8 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
 })();
 
 // ── SMOOTH PAGE TRANSITION ─────────────────────────────────────
+// Skip on low-end devices — instant navigation is faster for them
+if (window.VN?.device?.features?.pageTransitions !== false)
 document.querySelectorAll('a[href]').forEach(a => {
   const href = a.getAttribute('href');
   if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('tel')) {
@@ -286,6 +296,7 @@ document.querySelectorAll('a[href]').forEach(a => {
 })();
 
 // ── SCROLL PROGRESS BAR ────────────────────────────────────────
+if (window.VN?.device?.features?.scrollProgress !== false)
 (function() {
   const bar = document.createElement('div');
   bar.id = 'scroll-progress';
@@ -304,6 +315,7 @@ document.querySelectorAll('a[href]').forEach(a => {
 })();
 
 // ── CURSOR GLOW ────────────────────────────────────────────────
+if (window.VN?.device?.features?.cursorGlow !== false)
 (function() {
   if (window.matchMedia('(pointer: coarse)').matches) return; // skip on touch
   const dot = document.createElement('div');
@@ -352,6 +364,7 @@ document.querySelectorAll('a[href]').forEach(a => {
 })();
 
 // ── HERO PARALLAX ──────────────────────────────────────────────
+if (window.VN?.device?.features?.heroParallax !== false)
 (function() {
   const heroImg = document.querySelector('.vn-hero__img');
   if (!heroImg) return;
