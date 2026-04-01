@@ -27,6 +27,7 @@
   --bg:       #0A0A0B;
   --bg-2:     #111113;
   --bg-3:     #1a1a1d;
+  --bg-footer: #1a1a1c;
   --surface:  rgba(255,255,255,0.04);
   --surface-hover: rgba(255,255,255,0.08);
   --border:   rgba(255,255,255,0.10);
@@ -691,7 +692,7 @@ nav:not(.navbar).scrolled {
    FOOTER (legacy sub-pages)
 ============================== */
 footer {
-  background: var(--bg-2);
+  background: var(--bg-footer);
   border-top: 1px solid var(--border);
   padding: 80px 0 40px;
 }
@@ -1610,7 +1611,7 @@ textarea.vn-input:focus {
    FOOTER — NEW HOMEPAGE
 ══════════════════════════════════════════════════════════════ */
 .vn-footer {
-  background: var(--bg-2);
+  background: var(--bg-footer);
   border-top: 1px solid var(--border);
   padding: 80px 40px 40px;
 }
@@ -1641,7 +1642,7 @@ textarea.vn-input:focus {
 
 .vn-footer__tagline {
   font-size: 0.9rem;
-  color: var(--text-3);
+  color: rgba(255,255,255,0.85);
   line-height: 1.6;
 }
 
@@ -1656,7 +1657,7 @@ textarea.vn-input:focus {
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: var(--text-3);
+  color: rgba(255,255,255,0.85);
   text-transform: uppercase;
   transition: color var(--transition);
 }
@@ -1672,11 +1673,11 @@ textarea.vn-input:focus {
 
 .vn-social {
   width: 44px; height: 44px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-3);
+  color: rgba(255,255,255,0.85);
   transition: color var(--transition), border-color var(--transition), background var(--transition);
 }
 
@@ -1691,17 +1692,17 @@ textarea.vn-input:focus {
   align-items: center;
   justify-content: space-between;
   padding-top: 24px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255,255,255,0.15);
   font-family: 'Space Mono', monospace;
   font-size: 0.65rem;
   letter-spacing: 0.08em;
-  color: var(--text-3);
+  color: rgba(255,255,255,0.85);
 }
 
 .vn-footer__legal { display: flex; gap: 20px; }
 
 .vn-footer__legal a {
-  color: var(--text-3);
+  color: rgba(255,255,255,0.85);
   transition: color var(--transition);
 }
 
