@@ -13,6 +13,12 @@
   <link rel="preload" href="images/bg-1.webp" as="image" />
   <link href="bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .vn-reel__placeholder { position: relative; overflow: hidden; }
+    .vn-reel__thumb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .vn-reel__thumb-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); z-index: 1; }
+    .vn-reel__play, .vn-reel__label, .vn-reel__sub { position: relative; z-index: 2; }
+  </style>
   <link rel="icon" type="image/png" href="images/logo-2.png" />
   <link rel="apple-touch-icon" href="images/logo-2.png" />
 </head>
@@ -69,21 +75,21 @@
 <div class="vn-marquee">
   <div class="vn-marquee__track">
     <span>AI Images</span><em>•</em>
-    <span>AI Videos</span><em>•</em>
+    <span>AI CONCEPT REELS</span><em>•</em>
     <span>AI Films</span><em>•</em>
     <span>Music Videos</span><em>•</em>
     <span>Brand Content</span><em>•</em>
     <span>AI Commercials</span><em>•</em>
     <span>Visual Effects</span><em>•</em>
-    <span>Post Production</span><em>•</em>
+    <span>AI PITCH DECKS</span><em>•</em>
     <span>AI Images</span><em>•</em>
-    <span>AI Videos</span><em>•</em>
+    <span>AI CONCEPT REELS</span><em>•</em>
     <span>AI Films</span><em>•</em>
     <span>Music Videos</span><em>•</em>
     <span>Brand Content</span><em>•</em>
     <span>AI Commercials</span><em>•</em>
     <span>Visual Effects</span><em>•</em>
-    <span>Post Production</span><em>•</em>
+    <span>AI PITCH DECKS</span><em>•</em>
   </div>
 </div>
 
@@ -98,6 +104,8 @@
       <span class="vn-num">01</span> REEL
     </div>
     <div class="vn-reel__placeholder" id="reelPlay" data-vimeo="1178595422" data-vimeo-h="ea450deca0">
+      <img src="images/showreel.png" alt="Showreel" class="vn-reel__thumb">
+      <div class="vn-reel__thumb-overlay"></div>
       <div class="vn-reel__play">
         <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
           <circle cx="28" cy="28" r="27" stroke="white" stroke-width="1.5" opacity="0.5"/>
@@ -166,7 +174,7 @@
         <h2 class="vn-contact__headline">LET'S<br>MAKE<br><span class="vn-pink">SOMETHING.</span></h2>
         <p class="vn-contact__sub">Your vision deserves visuals that have never existed before. Let's create them together.</p>
         <a href="mailto:office@visualnerds.com" class="vn-contact__email d-block mb-3">office@visualnerds.com</a>
-        <p class="vn-contact__legal">Based near London, UK — working worldwide.</p>
+        <p class="vn-contact__legal">Based in London, UK — working worldwide.</p>
       </div>
       <div class="col-lg-7">
         <form class="vn-contact__form" id="contactForm">
